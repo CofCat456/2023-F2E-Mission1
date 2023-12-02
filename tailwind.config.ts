@@ -1,7 +1,7 @@
 /** @type {import('tailwindcss').Config} */
 export default {
   content: [],
-theme: {
+  theme: {
     extend: {
       fontFamily: {
         serif: ['Noto Serif TC', 'serif'],
@@ -34,4 +34,3 @@ theme: {
   },
   plugins: [],
 }
-
