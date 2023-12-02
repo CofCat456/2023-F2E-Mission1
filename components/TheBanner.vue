@@ -2,6 +2,7 @@
 </script>
 
 <template>
-  <TheHeader />
-  <TheBanner />
+  <section>
+    213
+  </section>
 </template>
