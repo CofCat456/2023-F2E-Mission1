@@ -10,9 +10,9 @@ export default defineNuxtConfig({
         Inter: [400, 700, 900],
       },
     }],
+    "@hypernym/nuxt-gsap"
   ],
   css: [
     '~/assets/css/global.css',
   ],
 })
-
