@@ -1,8 +1,14 @@
-<script lang="ts" setup></script>
+<script setup lang="ts">
+const { $gsap } = useNuxtApp()
+
+onMounted(() => {
+  $gsap.to('.loop', { xPercent: -50, ease: 'none', repeat: -1, duration: 10 })
+})
+</script>
 
 <template>
-  <section class="-mt-[1px] p-[10px] bg-primaryTheme">
-    <div class="flex items-center gap-6 text-white font-mantou font-normal text-title tracking-2 leading-none">
+  <section class="max-w-full -mt-[1px] p-[10px] bg-primaryTheme flex flex-row items-center gap-6 whitespace-nowrap overflow-hidden">
+    <div v-for="item in 2" :key="item" class="loop flex items-center gap-6 text-white font-mantou font-normal text-title tracking-2 leading-none">
       <p>為喵星人，護台灣！</p>
       <p>從喵的眼中，看見台灣</p>
       <p>喵的未來，人的希望</p>
