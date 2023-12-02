@@ -4,22 +4,22 @@
 
 @layer base {
   h1 {
-    @apply text-[40px] sm:text-[32px] font-bold leading-normal;
+    @apply sm:text-[40px] text-[32px] font-bold leading-normal;
   }
   h2 {
-    @apply text-[32px] sm:text-[24px] font-bold leading-normal;
+    @apply sm:text-[32px] text-[24px] font-bold leading-normal;
   }
   h3 {
-    @apply text-[28px] sm:text-[24px] font-bold leading-normal;
+    @apply sm:text-[28px] text-[24px] font-bold leading-normal;
   }
   h4 {
-    @apply text-[24px] sm:text-[24px] font-bold leading-normal;
+    @apply sm:text-[24px] text-[24px] font-bold leading-normal;
   }
   h5 {
-    @apply text-[20px] sm:text-[20px] font-bold leading-normal;
+    @apply sm:text-[20px] text-[20px] font-bold leading-normal;
   }
   h6 {
-    @apply text-[18px] sm:text-base leading-normal;
+    @apply sm:text-[18px] text-base leading-normal;
   }
   body {
     @apply text-base;
@@ -32,6 +32,12 @@
   }
   .text-remark {
     @apply text-[14px] leading-normal;
+  }
+  .text-gradientTheme {
+    background: linear-gradient(90deg, #E5793B 1.54%, #FF4185 97.86%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
   }
   .bg-gradientTheme {
     background: linear-gradient(90deg, #E6793B 1.54%, #FF4185 97.86%);

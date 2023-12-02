@@ -15,10 +15,12 @@ const iconList: { icon: Icon, link: SocialMedia }[] = [
   { icon: 'ig', link: SocialMedia.IG },
   { icon: 'youtube', link: SocialMedia.YOUTUBE },
 ]
+
+const headerRef = inject('headerRef')
 </script>
 
 <template>
-  <header class="bg-colorTheme1 w-full px-6 py-4">
+  <div ref="headerRef" class="bg-colorTheme1 w-full px-6 py-4">
     <div class="sticky bg-white border w-full border-white px-6 py-3 rounded-2xl flex justify-between">
       <!-- Logo -->
       <div class="flex items-center gap-3 text-primaryTheme">
@@ -48,5 +50,5 @@ const iconList: { icon: Icon, link: SocialMedia }[] = [
         </li>
       </ul>
     </div>
-  </header>
+  </div>
 </template>
