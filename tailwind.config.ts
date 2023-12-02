@@ -13,6 +13,7 @@ export default <Partial<Config>>{
     },
     fontFamily: {
       mantou: ['"Mantou Sans"', 'sans-serif'],
+      inter: ['Inter', 'sans-serif'],
     },
   },
 }
