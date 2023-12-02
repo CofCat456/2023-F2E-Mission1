@@ -1,5 +1,4 @@
 @font-face {
-    font-family: "Mantou Sans";
-    src: url(assets/mantou/MantouSans-Regular.ttf) format("truetype");
+  font-family: 'Mantou Sans';
+  src: url(assets/mantou/MantouSans-Regular.ttf) format('truetype');
 }
-
