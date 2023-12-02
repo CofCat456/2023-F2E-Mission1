@@ -5,7 +5,7 @@ const props = defineProps<{
 </script>
 
 <template>
-  <div class="text-xl">
-    Hello World!
+  <div class="text-title font-mantou">
+    饅頭黑體 64px
   </div>
 </template>
