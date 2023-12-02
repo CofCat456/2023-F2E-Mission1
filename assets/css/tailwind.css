@@ -28,7 +28,7 @@
 
 @layer components {
   .text-title {
-    @apply text-[64px] font-bold leading-normal sm:text-[52px];
+    @apply sm:text-[64px] text-[52px] font-bold leading-normal;
   }
   .text-remark {
     @apply text-[14px] leading-normal;

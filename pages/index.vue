@@ -13,4 +13,5 @@ provide('headerHeight', height)
 <template>
   <TheHeader />
   <TheBanner />
+  <AnimationBar />
 </template>

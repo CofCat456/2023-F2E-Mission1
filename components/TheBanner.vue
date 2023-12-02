@@ -13,7 +13,7 @@ const headerHeight = inject('headerHeight')
   >
     <div class="text-center inline-block mt-auto">
       <!-- Title -->
-      <h2 class="font-mantou text-8xl tracking-[2px] text-gradientTheme font-normal">
+      <h2 class="font-mantou text-8xl tracking-2 text-gradientTheme font-normal">
         台灣的明天 喵先鋪路
       </h2>
 

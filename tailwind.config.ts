@@ -10,6 +10,9 @@ export default <Partial<Config>>{
         colorTheme1: '#FDFCFB',
         colorTheme2: '#F7ECE1',
       },
+      letterSpacing: {
+        2: '0.125em',
+      },
     },
     fontFamily: {
       mantou: ['"Mantou Sans"', 'sans-serif'],
