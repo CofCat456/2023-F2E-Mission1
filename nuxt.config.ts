@@ -10,7 +10,11 @@ export default defineNuxtConfig({
         Inter: [400, 700, 900],
       },
     }],
-    '@hypernym/nuxt-gsap',
+    ['@hypernym/nuxt-gsap', {
+      extraPlugins: {
+        scrollTrigger: true,
+      },
+    }],
   ],
   css: [
     '~/assets/css/global.css',
