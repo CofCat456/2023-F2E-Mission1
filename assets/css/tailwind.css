@@ -6,39 +6,48 @@
   h1 {
     @apply sm:text-[40px] text-[32px] font-bold leading-normal;
   }
+
   h2 {
     @apply sm:text-[32px] text-[24px] font-bold leading-normal;
   }
+
   h3 {
     @apply sm:text-[28px] text-[24px] font-bold leading-normal;
   }
+
   h4 {
     @apply sm:text-[24px] text-[24px] font-bold leading-normal;
   }
+
   h5 {
     @apply sm:text-[20px] text-[20px] font-bold leading-normal;
   }
+
   h6 {
     @apply sm:text-[18px] text-base leading-normal;
   }
+
   body {
-    @apply text-base;
+    @apply text-base text-primary;
   }
 }
 
 @layer components {
   .text-title {
-    @apply sm:text-[64px] text-[52px] font-bold leading-normal;
+    @apply sm:text-[64px] text-[52px] leading-normal;
   }
+
   .text-remark {
     @apply text-[14px] leading-normal;
   }
+
   .text-gradientTheme {
     background: linear-gradient(90deg, #e5793b 1.54%, #ff4185 97.86%);
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
   }
+
   .bg-gradientTheme {
     background: linear-gradient(90deg, #e6793b 1.54%, #ff4185 97.86%);
   }

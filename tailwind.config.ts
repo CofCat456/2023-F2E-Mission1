@@ -13,6 +13,9 @@ export default <Partial<Config>>{
       letterSpacing: {
         2: '0.125em',
       },
+      maxWidth: {
+        '8xl': '82.5rem',
+      },
     },
     fontFamily: {
       mantou: ['"Mantou Sans"', 'sans-serif'],

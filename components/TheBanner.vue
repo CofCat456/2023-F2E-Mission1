@@ -25,7 +25,7 @@ onMounted(() => {
   >
     <div class="text-center inline-block mt-auto">
       <!-- Title -->
-      <h2 ref="titleRef" class="font-mantou text-8xl tracking-2 text-gradientTheme font-normal">
+      <h2 ref="titleRef" class="font-mantou text-8xl tracking-2 text-gradientTheme">
         台灣的明天 喵先鋪路
       </h2>
 
@@ -52,7 +52,7 @@ onMounted(() => {
 
     <!-- Image -->
     <div ref="peopleRef" class="mx-auto">
-      <NuxtImg width="723" fit="cover" src="/people_1.png" />
+      <NuxtImg width="723" fit="cover" src="/img_people_1.png" />
     </div>
   </section>
 </template>
