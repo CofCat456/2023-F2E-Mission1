@@ -6,7 +6,7 @@ export default <Partial<Config>>{
       colors: {
         primaryTheme: '#DA7D4A',
         primary: '#334155',
-        secondary: '##64748B',
+        secondary: '#64748B',
         colorTheme1: '#FDFCFB',
         colorTheme2: '#F7ECE1',
       },
