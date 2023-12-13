@@ -12,7 +12,7 @@
     "format": "eslint . --fix"
   },
   "devDependencies": {
-    "@antfu/eslint-config": "^2.2.0",
+    "@antfu/eslint-config": "^2.4.5",
     "@antfu/eslint-plugin-prettier": "5.0.1-1",
     "@hypernym/nuxt-gsap": "^2.4.2",
     "@nuxt/devtools": "latest",
