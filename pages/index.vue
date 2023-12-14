@@ -16,4 +16,5 @@ provide('headerHeight', height)
   <AnimationBar />
   <TheAdvocate />
   <TheEvents />
+  <ThePolicyIssues />
 </template>
