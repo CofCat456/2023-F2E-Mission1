@@ -23,7 +23,7 @@ onMounted(() => {
 </script>
 
 <template>
-  <section ref="advocateRef" class="py-[104px] bg-colorTheme2">
+  <section ref="advocateRef" class="py-block bg-colorTheme2">
     <div class="max-w-8xl mx-auto flex items-stretch rounded-3xl overflow-hidden">
       <div ref="leftSideRef" class="flex-1 bg-white py-16 px-10">
         <!-- Page Title -->

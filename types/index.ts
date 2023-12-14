@@ -9,3 +9,8 @@ export enum SocialMedia {
   YOUTUBE = 'https://www.youtube.com/channel/UCVoZVrWGIICKr_h9XhjL0SQ',
   TWITTER = 'https://twitter.com/CofCat47',
 }
+
+// Basic
+
+// Button Theme
+export type BtnTheme = 'default' | 'dark'

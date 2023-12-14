@@ -14,7 +14,7 @@ const getUpperCaseTitle = computed(() => props.tag.toUpperCase())
     <p class="font-bold inline-block rounded-lg px-3 py-2 bg-primary text-white">
       {{ getUpperCaseTitle }}
     </p>
-    <p class="text-title font-mantou text-gradientTheme">
+    <p class="text-title text-gradientTheme">
       {{ title }}
     </p>
   </div>

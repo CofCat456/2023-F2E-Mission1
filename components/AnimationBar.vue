@@ -34,10 +34,12 @@ onMounted(() => {
 
 <template>
   <section ref="containerRef" class="max-w-full -mt-[1px] p-[10px] bg-primaryTheme overflow-hidden">
-    <ul ref="ulRef" class="whitespace-nowrap text-white font-mantou font-normal text-title tracking-2 leading-none">
-      <li v-for="item in 2" :key="item" class="loop inline-block pr-4">
-        為喵星人，護台灣！從喵的眼中，看見台灣 喵的未來，人的希望
-      </li>
+    <ul ref="ulRef" class="whitespace-nowrap text-white font-normal text-title tracking-2 leading-none">
+      <template v-for="item in 2" :key="item">
+        <li class="loop inline-block pr-4">
+          為喵星人，護台灣！從喵的眼中，看見台灣 喵的未來，人的希望
+        </li>
+      </template>
     </ul>
   </section>
 </template>

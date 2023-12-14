@@ -33,21 +33,25 @@ const headerRef = inject('headerRef')
       <!-- Nav -->
       <nav class="menu my-auto">
         <ul class="flex items-center gap-4">
-          <li v-for="nav in navList" :key="nav" class="gap-3 cursor-pointer rounded-lg text-primary hover:text-primaryTheme">
-            <h6>
-              {{ nav }}
-            </h6>
-          </li>
+          <template v-for="nav in navList" :key="nav">
+            <li class="gap-3 cursor-pointer rounded-lg text-primary hover:text-primaryTheme">
+              <h6>
+                {{ nav }}
+              </h6>
+            </li>
+          </template>
         </ul>
       </nav>
 
       <!-- Buttons -->
       <ul class="flex items-center gap-4">
-        <li v-for="{ icon, link } in iconList" :key="icon" class="rounded hover:brightness-90 duration-300 cursor-pointer">
-          <NuxtLink :to="link" target="_blank">
-            <NuxtImg width="32" :src="`/icon/${icon}.svg`" />
-          </NuxtLink>
-        </li>
+        <template v-for="{ icon, link } in iconList" :key="icon">
+          <li class="rounded hover:brightness-90 duration-300 cursor-pointer">
+            <NuxtLink :to="link" target="_blank">
+              <NuxtImg width="32" :src="`/icon/${icon}.svg`" />
+            </NuxtLink>
+          </li>
+        </template>
       </ul>
     </div>
   </div>

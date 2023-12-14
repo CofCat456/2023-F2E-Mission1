@@ -34,7 +34,7 @@
 
 @layer components {
   .text-title {
-    @apply sm:text-[64px] text-[52px] leading-normal;
+    @apply sm:text-[64px] text-[52px] font-mantou leading-normal;
   }
 
   .text-remark {
