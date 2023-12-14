@@ -17,4 +17,5 @@ provide('headerHeight', height)
   <TheAdvocate />
   <TheEvents />
   <ThePolicyIssues />
+  <TheContact />
 </template>
