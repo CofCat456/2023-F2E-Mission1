@@ -10,9 +10,9 @@ const peopleRef = ref<HTMLImageElement | null>(null)
 
 onMounted(() => {
   const timeline = $gsap.timeline()
-  timeline.from(titleRef.value, { y: 150, opacity: 0, duration: 0.8 })
-    .from([leftBtnRef.value, rightBtnRef.value], { y: 100, opacity: 0, duration: 0.8 })
-    .from(peopleRef.value, { y: 100, opacity: 0, duration: 0.8 }, '+=.1')
+  timeline.from(titleRef.value, { y: 100, autoAlpha: 0, duration: 0.6 })
+    .from([leftBtnRef.value, rightBtnRef.value], { y: 50, autoAlpha: 0, duration: 0.6 })
+    .from(peopleRef.value, { y: 50, autoAlpha: 0, duration: 0.8 }, '+=.1')
 })
 </script>
 
@@ -25,12 +25,12 @@ onMounted(() => {
   >
     <div class="text-center inline-block mt-auto">
       <!-- Title -->
-      <h2 ref="titleRef" class="font-mantou text-8xl tracking-2 text-gradientTheme">
+      <h2 ref="titleRef" class="font-mantou font-normal text-8xl tracking-2 text-gradientTheme">
         台灣的明天 喵先鋪路
       </h2>
 
       <!-- Buttons -->
-      <div class="font-inter my-4 flex items-center gap-4 justify-center">
+      <div class="my-4 flex items-center gap-4 justify-center">
         <div ref="leftBtnRef" class="bg-primary inline-block rounded-2xl py-3 px-4">
           <h3 class="text-white">
             2024 立委參選人

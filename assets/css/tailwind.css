@@ -4,7 +4,7 @@
 
 @layer base {
   h1 {
-    @apply sm:text-[40px] text-[32px] font-bold leading-normal;
+    @apply sm:text-[40px] text-[32px] leading-normal;
   }
 
   h2 {
@@ -28,7 +28,7 @@
   }
 
   body {
-    @apply text-base text-primary;
+    @apply font-inter text-base text-primary;
   }
 }
 
