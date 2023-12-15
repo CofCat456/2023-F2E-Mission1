@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import { NuxtImg } from '#components'
+
 const headerHeight = inject('headerHeight')
 
 const { $gsap } = useNuxtApp()
@@ -6,13 +8,13 @@ const { $gsap } = useNuxtApp()
 const titleRef = ref<HTMLHeadingElement | null>(null)
 const leftBtnRef = ref<HTMLDivElement | null>(null)
 const rightBtnRef = ref<HTMLDivElement | null>(null)
-const peopleRef = ref<HTMLImageElement | null>(null)
+const peopleRef = ref<InstanceType<typeof NuxtImg> | null>(null)
 
 onMounted(() => {
   const timeline = $gsap.timeline()
   timeline.from(titleRef.value, { y: 100, autoAlpha: 0, duration: 0.6 })
     .from([leftBtnRef.value, rightBtnRef.value], { y: 50, autoAlpha: 0, duration: 0.6 })
-    .from(peopleRef.value, { y: 50, autoAlpha: 0, duration: 0.6 }, '+=.1')
+    .from(peopleRef.value?.$el, { y: 50, autoAlpha: 0, duration: 0.6 }, '+=.1')
 })
 </script>
 
@@ -20,9 +22,9 @@ onMounted(() => {
   <section
     :style="{
       height: `calc(100dvh - ${headerHeight}px)`,
-    }" class="flex flex-col"
+    }" class="flex flex-col items-center"
   >
-    <div class="text-center inline-block mt-auto">
+    <div class="text-center inline-block xl:mt-auto md:mt-8">
       <!-- Title -->
       <h2 ref="titleRef" class="font-mantou font-normal text-8xl tracking-2 text-gradientTheme">
         台灣的明天 喵先鋪路
@@ -50,9 +52,7 @@ onMounted(() => {
     </div>
 
     <!-- Image -->
-    <div ref="peopleRef" class="mx-auto">
-      <NuxtImg width="723" fit="cover" src="/img_people_1.png" />
-    </div>
+    <NuxtImg ref="peopleRef" class="flex-1" src="/img_people_1.png" />
   </section>
 </template>
 

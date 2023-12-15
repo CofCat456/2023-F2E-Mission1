@@ -1,4 +1,5 @@
 import type { Config } from 'tailwindcss'
+import { fontFamily } from 'tailwindcss/defaultTheme'
 
 export default <Partial<Config>>{
   theme: {
@@ -22,8 +23,8 @@ export default <Partial<Config>>{
       },
     },
     fontFamily: {
-      mantou: ['"Mantou Sans"', 'sans-serif'],
-      inter: ['Inter', 'sans-serif'],
+      mantou: ['Mantou Sans', 'Mantou Sans fallback', ...fontFamily.sans],
+      inter: ['Inter', 'Inter fallback', ...fontFamily.sans],
     },
   },
 }

@@ -15,6 +15,7 @@ export default defineNuxtConfig({
         scrollTrigger: true,
       },
     }],
+    "@nuxtjs/fontaine"
   ],
   css: [
     '~/assets/css/global.css',
