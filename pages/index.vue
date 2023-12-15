@@ -2,7 +2,7 @@
 import { ref } from 'vue'
 import { useElementBounding } from '@vueuse/core'
 
-const headerRef = ref(null)
+const headerRef = ref<HTMLHeadElement | null>(null)
 const isLoading = ref(true)
 
 const { height } = useElementBounding(headerRef)
