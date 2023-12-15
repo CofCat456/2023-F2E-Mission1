@@ -12,7 +12,7 @@ onMounted(() => {
   const timeline = $gsap.timeline()
   timeline.from(titleRef.value, { y: 100, autoAlpha: 0, duration: 0.6 })
     .from([leftBtnRef.value, rightBtnRef.value], { y: 50, autoAlpha: 0, duration: 0.6 })
-    .from(peopleRef.value, { y: 50, autoAlpha: 0, duration: 0.8 }, '+=.1')
+    .from(peopleRef.value, { y: 50, autoAlpha: 0, duration: 0.6 }, '+=.1')
 })
 </script>
 
@@ -20,8 +20,7 @@ onMounted(() => {
   <section
     :style="{
       height: `calc(100dvh - ${headerHeight}px)`,
-    }"
-    class="flex flex-col"
+    }" class="flex flex-col"
   >
     <div class="text-center inline-block mt-auto">
       <!-- Title -->
@@ -38,12 +37,12 @@ onMounted(() => {
         </div>
 
         <div ref="rightBtnRef" class="flex items-center gap-5 border border-white shadow rounded-2xl px-4 py-3">
-          <div class="relative w-10 bg-gradientTheme p-3 rounded-full aspect-square">
-            <p class="text-white text-2xl absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
+          <div class="relative w-[50px] bg-gradientTheme p-3 rounded-full aspect-square">
+            <p class="font-black text-white text-[32px] absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
               3
             </p>
           </div>
-          <h1 class="text-primaryTheme">
+          <h1 class="text-primaryTheme font-bold">
             喵立翰 Miao Li-Han
           </h1>
         </div>

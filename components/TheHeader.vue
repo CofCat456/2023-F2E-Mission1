@@ -1,19 +1,10 @@
 <script setup lang="ts">
-import type { Icon } from '../types'
-import { SocialMedia } from '../types'
-
 const navList = [
   '候選人主張',
   '最新活動',
   '政策議題',
   '小額捐款',
   '民眾服務信箱',
-]
-
-const iconList: { icon: Icon, link: SocialMedia }[] = [
-  { icon: 'fb', link: SocialMedia.FB },
-  { icon: 'ig', link: SocialMedia.IG },
-  { icon: 'youtube', link: SocialMedia.YOUTUBE },
 ]
 
 const headerRef = inject('headerRef')
@@ -43,16 +34,8 @@ const headerRef = inject('headerRef')
         </ul>
       </nav>
 
-      <!-- Buttons -->
-      <ul class="flex items-center gap-4">
-        <template v-for="{ icon, link } in iconList" :key="icon">
-          <li class="rounded hover:brightness-90 duration-300 cursor-pointer">
-            <NuxtLink :to="link" target="_blank">
-              <NuxtImg width="32" :src="`/icon/${icon}.svg`" />
-            </NuxtLink>
-          </li>
-        </template>
-      </ul>
+      <!-- Social Media Btns -->
+      <SocialMediaBtns />
     </div>
   </div>
 </template>

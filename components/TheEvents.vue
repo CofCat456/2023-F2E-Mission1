@@ -44,8 +44,8 @@ onMounted(() => {
     })
 
     timeline.from(pageTitleRef.value?.$el, { y: 100, autoAlpha: 0, duration: 0.6 })
-      .from(leftSideRef, { x: 100, autoAlpha: 0, duration: 0.8 }, '+=.1')
-      .from([...rightSidesRef, moreRef.value], { x: -100, autoAlpha: 0, duration: 0.8 }, '<')
+      .from(leftSideRef, { x: 100, autoAlpha: 0, duration: 0.6 }, '+=.1')
+      .from([...rightSidesRef, moreRef.value], { x: -100, autoAlpha: 0, duration: 0.6 }, '<')
   }
 })
 </script>
