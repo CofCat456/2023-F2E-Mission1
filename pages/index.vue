@@ -3,6 +3,8 @@ import { ref } from 'vue'
 import { useElementBounding } from '@vueuse/core'
 
 const headerRef = ref(null)
+const isLoading = ref(true)
+
 const { height } = useElementBounding(headerRef)
 
 // provide
@@ -11,13 +13,16 @@ provide('headerHeight', height)
 </script>
 
 <template>
-  <TheHeader />
-  <TheBanner />
-  <AnimationBar />
-  <TheAdvocate />
-  <TheEvents />
-  <ThePolicyIssues />
-  <TheContact />
-  <TheSlogan />
-  <TheFooter />
+  <CustomLoadingIndicator v-if="isLoading" @set-is-loading="isLoading = false" />
+  <template v-else>
+    <TheHeader />
+    <TheBanner />
+    <AnimationBar />
+    <TheAdvocate />
+    <TheEvents />
+    <ThePolicyIssues />
+    <TheContact />
+    <TheSlogan />
+    <TheFooter />
+  </template>
 </template>
