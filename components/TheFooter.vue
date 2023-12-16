@@ -6,8 +6,8 @@
       <!-- Left box -->
       <div class="flex-1 flex flex-col gap-4">
         <!-- Title -->
-        <div class="flex items-center gap-3">
-          <div class="relative w-[32px] bg-gradientTheme p-3 rounded-full aspect-square">
+        <div class="flex items-center gap-2">
+          <div class="relative w-[32px] bg-gradientTheme rounded-full aspect-square">
             <p class="text-white text-xl font-black absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
               3
             </p>

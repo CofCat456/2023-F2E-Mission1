@@ -24,7 +24,7 @@ onMounted(() => {
   <header ref="headerRef" class="sticky top-0 bg-colorTheme1 w-full px-6 py-4 z-40 transition-colors">
     <div class="bg-white border w-full border-white px-8 py-3 rounded-2xl flex justify-between">
       <!-- Logo -->
-      <div class="flex items-center gap-3 text-primaryTheme">
+      <div class="flex items-center gap-2 text-primaryTheme">
         <NuxtImg sizes="32px" src="/logo.svg" />
         <h4>
           喵立翰 Miao Li-Han
@@ -35,8 +35,8 @@ onMounted(() => {
       <nav class="menu my-auto">
         <ul class="flex items-center gap-4">
           <template v-for="nav in navList" :key="nav">
-            <li class="gap-3 cursor-pointer rounded-lg text-primary hover:text-primaryTheme">
-              <h6>
+            <li class="gap-4 cursor-pointer rounded-lg text-primary hover:text-primaryTheme">
+              <h6 class="p-2">
                 {{ nav }}
               </h6>
             </li>

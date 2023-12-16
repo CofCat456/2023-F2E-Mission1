@@ -23,6 +23,7 @@
     "@vueuse/nuxt": "^10.6.1",
     "eslint": "^8.55.0",
     "nuxt": "^3.8.2",
+    "tailwind-scrollbar": "^3.0.5",
     "vue": "^3.3.9",
     "vue-router": "^4.2.5"
   },

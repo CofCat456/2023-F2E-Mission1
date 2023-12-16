@@ -10,6 +10,7 @@ export default <Partial<Config>>{
         secondary: '#64748B',
         colorTheme1: '#FDFCFB',
         colorTheme2: '#F7ECE1',
+        colorTheme3: '#F8FAFC',
       },
       letterSpacing: {
         2: '0.125em',
@@ -27,4 +28,7 @@ export default <Partial<Config>>{
       inter: ['Inter', 'Inter fallback', ...fontFamily.sans],
     },
   },
+  plugins: [
+    require('tailwind-scrollbar')({ nocompatible: true }),
+  ],
 }

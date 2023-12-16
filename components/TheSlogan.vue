@@ -23,7 +23,7 @@ onMounted(() => {
       </h2>
 
       <div ref="nameRef" class="flex items-center gap-5 border border-white shadow rounded-2xl px-4 py-3">
-        <div class="relative w-10 bg-gradientTheme p-3 rounded-full aspect-square">
+        <div class="relative w-10 bg-gradientTheme rounded-full aspect-square">
           <p class="text-white text-2xl absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
             3
           </p>

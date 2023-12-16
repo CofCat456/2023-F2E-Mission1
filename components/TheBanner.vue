@@ -24,7 +24,7 @@ onMounted(() => {
       height: `calc(100dvh - ${headerHeight}px)`,
     }" class="flex flex-col items-center"
   >
-    <div class="text-center inline-block xl:mt-auto md:mt-8">
+    <div class="text-center inline-block xl:mt-24 md:mt-8">
       <!-- Title -->
       <h2 ref="titleRef" class="font-mantou font-normal text-8xl tracking-2 text-gradientTheme">
         台灣的明天 喵先鋪路
@@ -39,7 +39,7 @@ onMounted(() => {
         </div>
 
         <div ref="rightBtnRef" class="flex items-center gap-5 border border-white shadow rounded-2xl px-4 py-3">
-          <div class="relative w-[50px] bg-gradientTheme p-3 rounded-full aspect-square">
+          <div class="relative w-[50px] bg-gradientTheme rounded-full aspect-square">
             <p class="font-black text-white text-[32px] absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
               3
             </p>

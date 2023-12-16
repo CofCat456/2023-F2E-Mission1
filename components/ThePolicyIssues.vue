@@ -1,29 +1,32 @@
 <script lang="ts" setup>
+import type { BasicModal } from '#components'
 import { PageTitle } from '#components'
+import { policyList } from '~/data'
+import type { Data } from '~/types'
 
 const { $gsap } = useNuxtApp()
 
 const policyIssuseRef = ref<HTMLElement | null>(null)
 const pageTitleRef = ref<InstanceType<typeof PageTitle> | null>(null)
 const policysRef = ref<HTMLElement[] | null>(null)
+const modalRef = ref<InstanceType<typeof BasicModal> | null>(null)
 
-const policyIssues = [
-  {
-    id: Math.random() + 1,
-    text: '為毛孩子謀福利！\n推動寵物醫療保障方案',
-    imageUrl: 'img_policy1.png',
-  },
-  {
-    id: Math.random() + 2,
-    text: '打造休閒天堂！\n推廣寵物休閒與娛樂場所',
-    imageUrl: 'img_policy2.png',
-  },
-  {
-    id: Math.random() + 3,
-    text: '推廣寵物飼養教育，讓愛更加專業',
-    imageUrl: 'img_policy3.png',
-  },
-]
+const selectPolicy: Data = reactive({
+  title: '',
+  text: '',
+  date: '',
+  imageUrl: '',
+})
+
+const title = '政策議題'
+
+// provide
+provide('modalRef', modalRef)
+
+function openPolicyModal(event: Data) {
+  Object.assign(selectPolicy, event)
+  modalRef.value?.open()
+}
 
 onMounted(() => {
   const timeline = $gsap.timeline({
@@ -41,22 +44,28 @@ onMounted(() => {
 <template>
   <section ref="policyIssuseRef" class="max-w-8xl py-block mx-auto">
     <!-- Page Title -->
-    <PageTitle ref="pageTitleRef" tag="POLICY ISSUES" title="政策議題" />
+    <PageTitle ref="pageTitleRef" tag="POLICY ISSUES" :title="title" />
 
     <!-- PolicyIssues Block -->
     <ul class="mt-16 grid grid-cols-3 gap-x-16">
-      <template v-for="{ id, text, imageUrl } in policyIssues" :key="id">
+      <template v-for="policy in policyList " :key="policy.id">
         <li
           ref="policysRef"
-          class="flex flex-col justify-between"
+          class="flex flex-col justify-between group cursor-pointer"
+          @click="openPolicyModal(policy)"
         >
-          <h4 class="px-4 pb-4 whitespace-pre hover:text-primaryTheme transition-colors duration-300 cursor-default">
-            {{ text }}
+          <h4 class="px-4 pb-4 whitespace-pre group-hover:text-primaryTheme transition-colors duration-300">
+            {{ policy.title }}
           </h4>
-          <NuxtImg class="rounded-3xl max-w-full h-auto" :src="imageUrl" />
+          <NuxtImg class="rounded-3xl max-w-full h-auto" :src="policy.imageUrl" />
         </li>
       </template>
     </ul>
+    <ModalActivity
+      :title="title"
+      :data="selectPolicy"
+      :data-list="policyList"
+    />
   </section>
 </template>
 

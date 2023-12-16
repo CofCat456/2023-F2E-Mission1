@@ -14,3 +14,13 @@ export enum SocialMedia {
 
 // Button Theme
 export type BtnTheme = 'default' | 'dark'
+
+// Data
+
+export interface Data {
+  id?: number
+  title: string
+  text: string
+  date?: string
+  imageUrl: string
+}

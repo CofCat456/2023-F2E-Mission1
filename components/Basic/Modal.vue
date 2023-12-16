@@ -2,6 +2,11 @@
 import { ref } from 'vue'
 
 const showed = ref(false)
+const modalWindowRef = ref<HTMLDivElement | null>(null)
+const modalHeaderRef = ref<HTMLDivElement | null>(null)
+
+const { height: modalWindowHeight } = useElementBounding(modalWindowRef)
+const { height: modalHeaderHeight } = useElementBounding(modalHeaderRef)
 
 function open() {
   showed.value = true
@@ -19,7 +24,7 @@ defineExpose({
 
 <template>
   <div
-    class="h-screen w-screen fixed top-0 left-0 flex items-center justify-center p-5 duration-300 z-50" :class="[
+    class="h-screen w-screen fixed top-0 left-0 flex items-center justify-center md:p-24 sm:p-5 duration-300 z-50" :class="[
       showed ? 'opacity-100' : 'pointer-events-none opacity-0',
     ]"
   >
@@ -30,12 +35,14 @@ defineExpose({
     />
 
     <!-- Modal-Window -->
+    <!-- FIXME: vueuse issues #3657 -->
     <div
-      class="w-full h-full rounded-lg bg-white overflow-hidden z-10 " :class="[
-        showed ? 'scale-100' : 'scale-0 transition-all duration-300',
-      ]"
+      ref="modalWindowRef"
+      class="md:max-w-[1400px] md:max-h-[calc(100dvh-92px*2)] w-full h-full rounded-lg bg-white overflow-hidden z-10"
     >
+      <!-- Modal-Header -->
       <div
+        ref="modalHeaderRef"
         class="flex items-center justify-between px-12 py-6"
       >
         <!-- Modal-Title -->
@@ -68,9 +75,19 @@ defineExpose({
       </div>
 
       <!-- Modal-Content -->
-      <div class="px-12">
+      <div
+        class="w-full px-12"
+        :style="{
+          height: `calc(${modalWindowHeight}px - ${modalHeaderHeight}px)`,
+        }"
+      >
+        <!-- <slot name="modalContent"> -->
+        <!--   I'm Content -->
+        <!-- </slot> -->
         <slot name="modalContent">
-          I'm Content
+          HeaderHeight: {{ modalHeaderHeight }}
+          <br>
+          WindowHeight: {{ modalWindowHeight }}
         </slot>
       </div>
     </div>
