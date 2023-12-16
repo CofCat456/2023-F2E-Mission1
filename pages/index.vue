@@ -9,6 +9,10 @@ const { height } = useElementBounding(headerRef)
 // provide
 provide('headerRef', headerRef)
 provide('headerHeight', height)
+
+onMounted(() => {
+  // useSmoothScroll()
+})
 </script>
 
 <template>

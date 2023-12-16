@@ -14,7 +14,6 @@
   "devDependencies": {
     "@antfu/eslint-config": "^2.4.5",
     "@antfu/eslint-plugin-prettier": "5.0.1-1",
-    "@hypernym/nuxt-gsap": "^2.4.2",
     "@nuxt/devtools": "latest",
     "@nuxt/image": "^1.1.0",
     "@nuxtjs/fontaine": "^0.4.1",
@@ -28,6 +27,7 @@
     "vue-router": "^4.2.5"
   },
   "dependencies": {
+    "gsap": "^3.12.4",
     "vue3-lottie": "^3.2.0"
   }
 }
