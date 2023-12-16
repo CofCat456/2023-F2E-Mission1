@@ -11,7 +11,7 @@ provide('headerRef', headerRef)
 provide('headerHeight', height)
 
 onMounted(() => {
-  // useSmoothScroll()
+  useSmoothScroll()
 })
 </script>
 
