@@ -1,7 +1,7 @@
 <script lang="ts" setup>
 import type { BtnTheme } from '~/types'
 
-const { $gsap } = useNuxtApp()
+const { gsap } = useGsap()
 
 interface ConcatItem {
   title: string
@@ -32,11 +32,11 @@ const concatList: ConcatItem[] = [
 ]
 
 onMounted(() => {
-  const timeline = $gsap.timeline({
+  const timeline = gsap.timeline({
     scrollTrigger: { trigger: contactRef.value, start: 'top center' },
   })
 
-  timeline.fromTo(contactBoxsRef.value, 0.6, { scale: 0 }, { scale: 1, ease: 'power4.out' })
+  timeline.fromTo(contactBoxsRef.value, 0.6, { scale: 0 }, { scale: 1, ease: 'expo.inOut' })
 })
 </script>
 

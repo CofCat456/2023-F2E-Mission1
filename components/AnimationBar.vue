@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { ref } from 'vue'
 
-const { $gsap } = useNuxtApp()
+const { gsap } = useGsap()
 
 const containerRef = ref<HTMLElement | null>(null)
 const ulRef = ref<HTMLUListElement | null>(null)
@@ -19,14 +19,14 @@ onMounted(() => {
   // step 2. 重複時更改起始點
   // step 3. 重新計算時間 (距離 / 時間 = 速率)
 
-  $gsap.fromTo('.loop', { x: textWidth }, {
+  gsap.fromTo('.loop', { x: textWidth }, {
     x: -1 * textWidth,
     ease: 'none',
     duration: 15,
     repeat: -1,
     scrollTrigger: { trigger: containerRef.value, start: 20 },
     onRepeat: () => {
-      $gsap.fromTo('.loop', { x: 0 }, { x: -1 * textWidth, ease: 'none', duration: textWidth / firstRate, repeat: -1 })
+      gsap.fromTo('.loop', { x: 0 }, { x: -1 * textWidth, ease: 'none', duration: textWidth / firstRate, repeat: -1 })
     },
   })
 })

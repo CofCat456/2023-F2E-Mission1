@@ -1,12 +1,12 @@
 <script lang="ts" setup>
-const { $gsap } = useNuxtApp()
+const { gsap } = useGsap()
 
 const sloganRef = ref<HTMLElement | null>(null)
 const titleRef = ref<HTMLDivElement | null>(null)
 const nameRef = ref<HTMLDivElement | null>(null)
 
 onMounted(() => {
-  const timeline = $gsap.timeline({
+  const timeline = gsap.timeline({
     scrollTrigger: { trigger: sloganRef.value, start: 'top center' },
   })
   timeline.from(titleRef.value, { y: 100, autoAlpha: 0, duration: 0.6 })

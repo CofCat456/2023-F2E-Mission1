@@ -4,7 +4,7 @@ import { PageTitle } from '#components'
 import { policyList } from '~/data'
 import type { Data } from '~/types'
 
-const { $gsap } = useNuxtApp()
+const { gsap } = useGsap()
 
 const policyIssuseRef = ref<HTMLElement | null>(null)
 const pageTitleRef = ref<InstanceType<typeof PageTitle> | null>(null)
@@ -29,7 +29,7 @@ function openPolicyModal(event: Data) {
 }
 
 onMounted(() => {
-  const timeline = $gsap.timeline({
+  const timeline = gsap.timeline({
     scrollTrigger: { trigger: policyIssuseRef.value, start: 'top center' },
   })
 

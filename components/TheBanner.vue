@@ -3,7 +3,7 @@ import { NuxtImg } from '#components'
 
 const headerHeight = inject('headerHeight')
 
-const { $gsap } = useNuxtApp()
+const { gsap } = useGsap()
 
 const titleRef = ref<HTMLHeadingElement | null>(null)
 const leftBtnRef = ref<HTMLDivElement | null>(null)
@@ -11,7 +11,7 @@ const rightBtnRef = ref<HTMLDivElement | null>(null)
 const peopleRef = ref<InstanceType<typeof NuxtImg> | null>(null)
 
 onMounted(() => {
-  const timeline = $gsap.timeline()
+  const timeline = gsap.timeline()
   timeline.from(titleRef.value, { y: 100, autoAlpha: 0, duration: 0.6 })
     .from([leftBtnRef.value, rightBtnRef.value], { y: 50, autoAlpha: 0, duration: 0.6 })
     .from(peopleRef.value?.$el, { y: 50, autoAlpha: 0, duration: 0.6 }, '+=.1')

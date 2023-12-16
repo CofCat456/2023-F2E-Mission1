@@ -4,7 +4,7 @@ import { PageTitle } from '#components'
 import { eventList } from '~/data'
 import type { Data } from '~/types'
 
-const { $gsap } = useNuxtApp()
+const { gsap } = useGsap()
 
 const eventRef = ref<HTMLElement | null>(null)
 const pageTitleRef = ref<InstanceType<typeof PageTitle> | null>(null)
@@ -33,7 +33,7 @@ onMounted(() => {
   if (articlesRef.value) {
     const [leftSideRef, ...rightSidesRef] = articlesRef.value
 
-    const timeline = $gsap.timeline({
+    const timeline = gsap.timeline({
       scrollTrigger: { trigger: eventRef.value, start: 'top center' },
     })
 

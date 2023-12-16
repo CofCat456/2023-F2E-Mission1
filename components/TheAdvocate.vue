@@ -1,7 +1,7 @@
 <script lang="ts" setup>
 import { NuxtImg } from '#components'
 
-const { $gsap } = useNuxtApp()
+const { gsap } = useGsap()
 
 const advocateRef = ref<HTMLElement | null>(null)
 const leftSideRef = ref<HTMLDivElement | null>(null)
@@ -13,7 +13,7 @@ const animationConfig = {
 }
 
 onMounted(() => {
-  const timeline = $gsap.timeline({
+  const timeline = gsap.timeline({
     scrollTrigger: { trigger: advocateRef.value, start: 'top center' },
   })
 

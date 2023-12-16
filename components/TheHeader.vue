@@ -1,5 +1,5 @@
 <script setup lang="ts">
-const { $ScrollTrigger } = useNuxtApp()
+const { ScrollTrigger } = useGsap()
 
 const navList = [
   '候選人主張',
@@ -12,7 +12,7 @@ const navList = [
 const headerRef: Ref<HTMLHeadElement> | undefined = inject('headerRef')
 
 onMounted(() => {
-  $ScrollTrigger.create({
+  ScrollTrigger.create({
     start: 'top -1',
     end: 99999,
     toggleClass: { className: 'header--scrolled', targets: headerRef?.value },
