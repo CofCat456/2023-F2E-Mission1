@@ -24,3 +24,40 @@ export interface Data {
   date?: string
   imageUrl: string
 }
+
+// Contact
+
+// contact block
+
+export type ContactType = 'donate' | 'service'
+
+export interface Donate {
+  title: string
+  price: number
+  donateNum: number
+}
+
+export interface Form {
+  id: 'name' | 'email' | 'phone' | 'suggest'
+  label: string
+  type: 'text' | 'email'
+  placeholder: string
+}
+
+export interface FormData {
+  name: string
+  email: string
+  phone: string
+  suggest: string
+}
+
+export interface ContactData {
+  id: ContactType
+  title: string
+  text: string
+  slogan: string
+  btnText: string
+  imageUrl: string
+  modalImageUrl: string
+  theme: BtnTheme
+}

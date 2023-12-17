@@ -1,4 +1,4 @@
-import type { Data } from '~/types'
+import type { ContactData, Data, Donate, Form } from '~/types'
 
 export const eventList: Data[] = [
   {
@@ -49,5 +49,67 @@ export const policyList: Data[] = [
     title: '推廣寵物飼養教育，讓愛更加專業',
     text: '',
     imageUrl: 'img_policy3.png',
+  },
+]
+
+export const contactList: ContactData[] = [
+  {
+    id: 'donate',
+    title: '小額支持喵喵',
+    text: '您的小筆捐款，是每隻毛孩未來的大大動力!',
+    slogan: '您的小筆捐款，是每隻毛孩未來的大大動力!',
+    btnText: '小額捐款',
+    imageUrl: '/img_donate.png',
+    modalImageUrl: '/img_donate.png',
+    theme: 'default',
+  },
+  {
+    id: 'service',
+    title: '民眾服務信箱',
+    text: '親愛的鄉親，每一位市民的意見都是我們社區前進的原動力',
+    slogan: '分享您的想法，一同為我們的未來打造更美好！',
+    btnText: '填寫表單',
+    imageUrl: '/img_email.png',
+    modalImageUrl: '/img_service.png',
+    theme: 'dark',
+  },
+]
+
+export const donatePlanList: Donate[] = [
+  {
+    title: '喵星人之友',
+    price: 600,
+    donateNum: 9957,
+  },
+  {
+    title: '喵星大使',
+    price: 6000,
+    donateNum: 2000,
+  },
+  {
+    title: '喵星傳奇',
+    price: 60000,
+    donateNum: 999,
+  },
+]
+
+export const formList: Form[] = [
+  {
+    id: 'name',
+    label: '您的姓名',
+    type: 'text',
+    placeholder: '姓名',
+  },
+  {
+    id: 'email',
+    label: 'Email',
+    type: 'email',
+    placeholder: 'email',
+  },
+  {
+    id: 'phone',
+    label: '手機',
+    type: 'text',
+    placeholder: '手機號碼',
   },
 ]

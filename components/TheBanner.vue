@@ -24,7 +24,7 @@ onMounted(() => {
       height: `calc(100dvh - ${headerHeight}px)`,
     }" class="flex flex-col items-center"
   >
-    <div class="text-center inline-block xl:mt-24 md:mt-8">
+    <div class="text-center inline-block xl:mt-24 md:mt-8 cursor-default">
       <!-- Title -->
       <h2 ref="titleRef" class="font-mantou font-normal text-8xl tracking-2 text-gradientTheme">
         台灣的明天 喵先鋪路
@@ -32,13 +32,13 @@ onMounted(() => {
 
       <!-- Buttons -->
       <div class="my-4 flex items-center gap-4 justify-center">
-        <div ref="leftBtnRef" class="bg-primary inline-block rounded-2xl py-3 px-4">
+        <div ref="leftBtnRef" class="bg-primary inline-block rounded-2xl py-3 px-4 cursor-default">
           <h3 class="text-white">
             2024 立委參選人
           </h3>
         </div>
 
-        <div ref="rightBtnRef" class="flex items-center gap-5 border border-white shadow rounded-2xl px-4 py-3">
+        <div ref="rightBtnRef" class="flex items-center gap-5 border border-white shadow rounded-2xl px-4 py-3 cursor-default">
           <div class="relative w-[50px] bg-gradientTheme rounded-full aspect-square">
             <p class="font-black text-white text-[32px] absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
               3

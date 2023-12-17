@@ -82,14 +82,14 @@ onMounted(() => {
         </BasicButton>
       </li>
     </ul>
-
-    <!-- Modal -->
-    <ModalActivity
-      :title="title"
-      :data="selectEvent"
-      :data-list="eventList"
-    />
   </section>
+
+  <!-- Modal -->
+  <ModalActivity
+    :title="title"
+    :data="selectEvent"
+    :data-list="eventList"
+  />
 </template>
 
 <style scoped>

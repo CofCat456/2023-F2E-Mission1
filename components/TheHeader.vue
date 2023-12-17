@@ -1,5 +1,6 @@
 <script setup lang="ts">
 const { ScrollTrigger } = useGsap()
+const { lenis } = useLenis()
 
 const navList = [
   '候選人主張',
@@ -10,6 +11,13 @@ const navList = [
 ]
 
 const headerRef: Ref<HTMLHeadElement> | undefined = inject('headerRef')
+
+function scrollTo() {
+  console.log(lenis)
+  lenis.scrollTo('bottom', {
+    duration: 2,
+  })
+}
 
 onMounted(() => {
   ScrollTrigger.create({
@@ -35,7 +43,7 @@ onMounted(() => {
       <nav class="menu my-auto">
         <ul class="flex items-center gap-4">
           <template v-for="nav in navList" :key="nav">
-            <li class="gap-4 cursor-pointer rounded-lg text-primary hover:text-primaryTheme">
+            <li class="gap-4 cursor-pointer rounded-lg text-primary hover:text-primaryTheme" @click="scrollTo">
               <h6 class="p-2">
                 {{ nav }}
               </h6>

@@ -1,6 +1,8 @@
 <script lang="ts" setup>
 import { ref } from 'vue'
 
+const emit = defineEmits<{ onClose: [] }>()
+
 const showed = ref(false)
 const modalWindowRef = ref<HTMLDivElement | null>(null)
 const modalHeaderRef = ref<HTMLDivElement | null>(null)
@@ -14,6 +16,7 @@ function open() {
 
 function close() {
   showed.value = false
+  emit('onClose')
 }
 
 defineExpose({
@@ -24,7 +27,7 @@ defineExpose({
 
 <template>
   <div
-    class="h-screen w-screen fixed top-0 left-0 flex items-center justify-center md:p-24 sm:p-5 duration-300 z-50" :class="[
+    class="h-screen w-screen fixed top-0 left-0 flex items-center justify-center md:p-12 sm:p-5 duration-300 z-50" :class="[
       showed ? 'opacity-100' : 'pointer-events-none opacity-0',
     ]"
   >
@@ -38,7 +41,7 @@ defineExpose({
     <!-- FIXME: vueuse issues #3657 -->
     <div
       ref="modalWindowRef"
-      class="md:max-w-[1400px] md:max-h-[calc(100dvh-92px*2)] w-full h-full rounded-lg bg-white overflow-hidden z-10"
+      class="md:max-w-[1400px] md:max-h-[calc(100dvh-48px*2)] w-full h-full rounded-lg bg-white overflow-hidden z-10"
     >
       <!-- Modal-Header -->
       <div
@@ -76,7 +79,7 @@ defineExpose({
 
       <!-- Modal-Content -->
       <div
-        class="w-full px-12"
+        class="w-full px-12 pb-12"
         :style="{
           height: `calc(${modalWindowHeight}px - ${modalHeaderHeight}px)`,
         }"

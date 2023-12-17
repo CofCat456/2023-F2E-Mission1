@@ -23,7 +23,7 @@ const modalRef: Ref<InstanceType<typeof BasicModal> | null> | undefined = inject
       <div class="flex h-full gap-8">
         <!-- Left Modal Block -->
         <aside class="w-2/5">
-          <NuxtImg v-if="data.imageUrl !== ''" class="w-full" fit="cover" :src="data.imageUrl" />
+          <NuxtImg v-if="data.imageUrl !== ''" class="w-full rounded-3xl" fit="cover" :src="data.imageUrl" />
           <p class="mt-4 text-remark">
             {{ data.title }}
           </p>
@@ -52,7 +52,7 @@ const modalRef: Ref<InstanceType<typeof BasicModal> | null> | undefined = inject
             </p>
             <ul class="grid grid-cols-3 gap-4">
               <li v-for="{ title, imageUrl } in getNotSelectList" :key="title">
-                <NuxtImg class="mb-3" :src="imageUrl" />
+                <NuxtImg class="mb-3 rounded-xl" :src="imageUrl" />
                 {{ title }}
               </li>
             </ul>
