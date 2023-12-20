@@ -1,7 +1,7 @@
 <script lang="ts" setup></script>
 
 <template>
-  <footer class="bg-colorTheme2 py-16">
+  <footer class="bg-colorTheme2 xl:py-16 md:pt-16 md:pb-32">
     <div class="max-w-footer xl:mx-auto md:mx-9 flex xl:flex-row md:flex-col items-start gap-x-4 gap-y-6">
       <!-- Left box -->
       <div class="flex-1 flex flex-col gap-4">

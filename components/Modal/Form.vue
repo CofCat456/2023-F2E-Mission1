@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import { BasicModal } from '#components'
+import { Modal } from '#components'
 import type { ContactData } from '~/types'
 
 const props = defineProps<{
@@ -18,23 +18,23 @@ defineEmits<{
 
 const getNoCommaSlogan = computed(() => props.data.slogan.replace('，', ' '))
 
-const modalRef: Ref<InstanceType<typeof BasicModal> | null> | undefined = inject('modalRef')
+const modalRef: Ref<InstanceType<typeof Modal> | null> | undefined = inject('modalRef')
 </script>
 
 <template>
-  <BasicModal ref="modalRef" @on-close="$emit('onClose')">
+  <Modal ref="modalRef" @on-close="$emit('onClose')">
     <template #modalTitle>
       {{ title }}
     </template>
 
     <template #modalContent>
-      <div class="flex h-full gap-8">
+      <div class="flex xl:p-0 md:p-4 xl:flex-row md:flex-col h-full gap-8 xl:overflow-y-visible md:overflow-y-auto scrollbar-thin">
         <!-- Left Modal Block -->
         <aside
-          class="flex-1 flex flex-col rounded-3xl"
+          class="flex-1 flex justify-between xl:flex-col md:flex-row rounded-3xl"
           :class="`${data.theme === 'default' ? 'bg-colorTheme2' : 'bg-colorTheme6'}`"
         >
-          <div class="p-10">
+          <div class="w-2/5 xl:p-10 p-6">
             <h1
               class="font-bold new-line"
               :class="`${data.theme === 'default' ? 'text-primaryTheme ' : 'text-primary'}`"
@@ -49,25 +49,26 @@ const modalRef: Ref<InstanceType<typeof BasicModal> | null> | undefined = inject
             </div>
           </div>
           <div
-            class="flex-1 grid"
+            class="grid pr-2"
             :class="`${data.id === 'donate' ? 'place-items-center' : 'place-items-end'}`"
           >
             <NuxtImg
               v-if="data.modalImageUrl !== ''"
-              densities="1x"
+              densities="x1"
               fit="cover"
               :src="data.modalImageUrl"
+              loading="lazy"
             />
           </div>
         </aside>
 
         <!-- Right Modal Block -->
-        <div class="flex-1 overflow-y-auto scrollbar-thin">
+        <div class="flex-1 xl:overflow-y-auto scrollbar-thin">
           <transition name="fade" mode="out-in" appear>
             <div v-if="isPass" class="flex flex-col h-full gap-8 justify-center items-center">
               <slot name="close">
                 <h3>感謝您的捐款</h3>
-                <NuxtImg densities="1x" src="/img_donate_done.svg" />
+                <NuxtImg densities="x1" src="/img_donate_done.svg" />
                 <button class="rounded-full border border-white px-24 py-4 bg-colorTheme5 font-semibold hover:brightness-90 transition-all duration-300" @click="modalRef?.close()">
                   關閉
                 </button>
@@ -104,7 +105,7 @@ const modalRef: Ref<InstanceType<typeof BasicModal> | null> | undefined = inject
         </div>
       </div>
     </template>
-  </BasicModal>
+  </Modal>
 </template>
 
 <style scoped>

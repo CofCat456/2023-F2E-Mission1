@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import type { BasicModal } from '#components'
+import type { Modal } from '#components'
 import { PageTitle } from '#components'
 import { policyList } from '~/data'
 import { type Data, Section } from '~/types'
@@ -9,7 +9,7 @@ const { gsap } = useGsap()
 const policyRef = ref<HTMLElement | null>(null)
 const pageTitleRef = ref<InstanceType<typeof PageTitle> | null>(null)
 const policysRef = ref<HTMLElement[] | null>(null)
-const modalRef = ref<InstanceType<typeof BasicModal> | null>(null)
+const modalRef = ref<InstanceType<typeof Modal> | null>(null)
 
 const selectPolicy: Data = reactive({
   title: '',
@@ -57,7 +57,11 @@ onMounted(() => {
           <h4 class="px-4 pb-4 whitespace-pre-wrap group-hover:text-primaryTheme transition-colors duration-300">
             {{ policy.title }}
           </h4>
-          <NuxtImg class="rounded-3xl max-w-full h-auto" :src="policy.imageUrl" />
+          <NuxtImg
+            class="rounded-3xl max-w-full h-auto"
+            :src="policy.imageUrl"
+            loading="lazy"
+          />
         </li>
       </template>
     </ul>

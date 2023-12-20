@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import type { BasicModal } from '#components'
+import type { Modal } from '#components'
 import { Section } from '~/types'
 import type { ContactData, ContactType, FormData } from '~/types'
 import { contactList } from '~/data'
@@ -8,7 +8,7 @@ const { gsap } = useGsap()
 
 const contactRef = ref<HTMLElement | null>()
 const contactBoxsRef = ref<HTMLElement[] | null>(null)
-const modalRef = ref<InstanceType<typeof BasicModal> | null>(null)
+const modalRef = ref<InstanceType<typeof Modal> | null>(null)
 
 const isLoading = ref(false)
 const isPass = ref(false)
@@ -90,7 +90,11 @@ onMounted(() => {
             <BasicButton class="bg-white" :theme="contact.theme" @click="openFormModal(contact)">
               {{ contact.btnText }}
             </BasicButton>
-            <NuxtImg class="xl:w-1/2 md:w-full h-auto object-cover" :src="contact.imageUrl" />
+            <NuxtImg
+              class="xl:w-1/2 md:w-full h-auto object-cover"
+              :src="contact.imageUrl"
+              loading="lazy"
+            />
           </div>
         </li>
       </template>

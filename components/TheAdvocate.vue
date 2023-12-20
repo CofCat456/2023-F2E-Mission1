@@ -44,7 +44,12 @@ onMounted(() => {
       </div>
 
       <!-- Img -->
-      <NuxtImg ref="rightSideRef" sizes="100% md:647px" src="/img_advocate.png" />
+      <NuxtImg
+        ref="rightSideRef"
+        class="max-w-full min-w-[647px] h-auto object-cover"
+        src="/img_advocate.png"
+        loading="lazy"
+      />
     </div>
   </section>
 </template>

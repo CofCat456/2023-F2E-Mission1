@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import type { BasicModal } from '#components'
 import { PageTitle } from '#components'
 import { eventList } from '~/data'
 import { Section } from '~/types'
@@ -11,7 +10,7 @@ const eventRef = ref<HTMLElement | null>(null)
 const pageTitleRef = ref<InstanceType<typeof PageTitle> | null>(null)
 const articlesRef = ref<HTMLElement[] | null>(null)
 const moreRef = ref<HTMLButtonElement | null>(null)
-const modalRef = ref<InstanceType<typeof BasicModal> | null>(null)
+const modalRef = ref<InstanceType<typeof Modal> | null>(null)
 
 const selectEvent: Data = reactive({
   title: '',
@@ -61,6 +60,7 @@ onMounted(() => {
           <NuxtImg
             class="rounded-2xl group-first:row-span-6 group-first:w-full group-first:h-auto group-[&:not(:first-child)]:row-span-6"
             :src="event.imageUrl"
+            loading="lazy"
           />
           <div class="group-first:col-span-1 group-[&:not(:first-child)]:row-span-6 group-[&:not(:first-child)]:col-span-2 grid gap-y-2">
             <time class="text-secondary text-remark" :datetime="event.date">{{ event.date }}</time>
