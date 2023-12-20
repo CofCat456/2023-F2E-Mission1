@@ -35,7 +35,6 @@
     @apply font-inter text-base text-primary;
   }
 
-  #advocate,
   #events,
   #policy,
   #contact,
@@ -43,6 +42,7 @@
     @apply xl:max-w-8xl md:max-w-2.5xl max-w-full sm:mx-auto sm:px-0 px-4 py-block;
   }
 
+  #advocate,
   footer {
     @apply sm:px-0 px-4 py-block bg-colorTheme2;
 
