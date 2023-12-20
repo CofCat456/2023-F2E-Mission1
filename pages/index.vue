@@ -23,9 +23,10 @@ onMounted(() => {
     <AnimationBar />
     <TheAdvocate />
     <TheEvents />
-    <ThePolicyIssues />
+    <ThePolicy />
     <TheContact />
     <TheSlogan />
     <TheFooter />
+    <MobileNav />
   </template>
 </template>

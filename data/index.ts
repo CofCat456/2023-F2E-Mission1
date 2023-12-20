@@ -2,22 +2,27 @@ import { type ContactData, type Data, type Donate, type Form, type Nav, Section 
 
 export const navList: Nav[] = [
   {
+    id: 'advocate',
     title: '候選人主張',
     target: Section.ADVOCATE,
   },
   {
+    id: 'events',
     title: '最新活動',
     target: Section.EVENTS,
   },
   {
+    id: 'policy',
     title: '政策議題',
-    target: Section.POLICYISSUSE,
+    target: Section.POLICY,
   },
   {
+    id: 'donate',
     title: '小額捐款',
     target: Section.CONTACT,
   },
   {
+    id: 'service',
     title: '民眾服務信箱',
     target: Section.CONTACT,
   },

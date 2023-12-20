@@ -6,7 +6,7 @@ import { type Data, Section } from '~/types'
 
 const { gsap } = useGsap()
 
-const policyIssuseRef = ref<HTMLElement | null>(null)
+const policyRef = ref<HTMLElement | null>(null)
 const pageTitleRef = ref<InstanceType<typeof PageTitle> | null>(null)
 const policysRef = ref<HTMLElement[] | null>(null)
 const modalRef = ref<InstanceType<typeof BasicModal> | null>(null)
@@ -30,7 +30,7 @@ function openPolicyModal(event: Data) {
 
 onMounted(() => {
   const timeline = gsap.timeline({
-    scrollTrigger: { trigger: policyIssuseRef.value, start: 'top center' },
+    scrollTrigger: { trigger: policyRef.value, start: 'top center' },
   })
 
   timeline.from(pageTitleRef.value?.$el, { y: 100, autoAlpha: 0, duration: 0.6 })
@@ -42,7 +42,7 @@ onMounted(() => {
 </script>
 
 <template>
-  <section :id="Section.POLICYISSUSE" ref="policyIssuseRef" class="max-w-8xl py-block mx-auto">
+  <section :id="Section.POLICY" ref="policyRef" class="max-w-8xl py-block mx-auto">
     <!-- Page Title -->
     <PageTitle ref="pageTitleRef" tag="POLICY ISSUES" :title="title" />
 
