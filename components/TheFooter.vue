@@ -2,7 +2,7 @@
 
 <template>
   <footer class="bg-colorTheme2 py-16">
-    <div class="max-w-footer mx-auto flex items-start gap-4">
+    <div class="max-w-footer xl:mx-auto md:mx-9 flex xl:flex-row md:flex-col items-start gap-x-4 gap-y-6">
       <!-- Left box -->
       <div class="flex-1 flex flex-col gap-4">
         <!-- Title -->

@@ -42,19 +42,19 @@ onMounted(() => {
 </script>
 
 <template>
-  <section :id="Section.POLICY" ref="policyRef" class="max-w-8xl py-block mx-auto">
+  <section :id="Section.POLICY" ref="policyRef" class="xl:max-w-8xl md:max-w-2.5xl py-block mx-auto">
     <!-- Page Title -->
     <PageTitle ref="pageTitleRef" tag="POLICY ISSUES" :title="title" />
 
     <!-- PolicyIssues Block -->
-    <ul class="mt-16 grid grid-cols-3 gap-x-16">
+    <ul class="mt-16 grid xl:grid-cols-3 md:grid-cols-2 xl:gap-x-16 md:gap-x-6 gap-y-16">
       <template v-for="policy in policyList " :key="policy.id">
         <li
           ref="policysRef"
           class="flex flex-col justify-between group cursor-pointer"
           @click="openPolicyModal(policy)"
         >
-          <h4 class="px-4 pb-4 whitespace-pre group-hover:text-primaryTheme transition-colors duration-300">
+          <h4 class="px-4 pb-4 whitespace-pre-wrap group-hover:text-primaryTheme transition-colors duration-300">
             {{ policy.title }}
           </h4>
           <NuxtImg class="rounded-3xl max-w-full h-auto" :src="policy.imageUrl" />

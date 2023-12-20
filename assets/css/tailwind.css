@@ -12,19 +12,19 @@
   }
 
   h3 {
-    @apply sm:text-[28px] text-[24px] font-bold leading-normal;
+    @apply xl:text-[28px] text-[24px] font-bold leading-normal;
   }
 
   h4 {
-    @apply sm:text-[24px] text-[24px] font-bold leading-normal;
+    @apply xl:text-[24px] text-[24px] font-bold leading-normal;
   }
 
   h5 {
-    @apply sm:text-[20px] text-[20px] font-bold leading-normal;
+    @apply xl:text-[20px] text-[20px] font-bold leading-normal;
   }
 
   h6 {
-    @apply sm:text-[18px] text-base leading-normal;
+    @apply xl:text-[18px] text-base leading-normal;
   }
 
   html {
@@ -37,8 +37,12 @@
 }
 
 @layer components {
+  .py-block {
+    @apply xl:py-[104px] md:py-16
+  }
+
   .text-title {
-    @apply sm:text-[64px] text-[52px] font-mantou leading-normal;
+    @apply xl:text-[64px] text-[52px] font-mantou leading-normal;
   }
 
   .text-remark {

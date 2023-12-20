@@ -2,13 +2,17 @@
 import { ref } from 'vue'
 
 const headerRef = ref<HTMLHeadElement | null>(null)
+const mobileNavRef = ref<HTMLHeadElement | null>(null)
 const isLoading = ref(true)
 
 const { height } = useElementBounding(headerRef)
+const { height: navHeight } = useElementBounding(mobileNavRef)
 
 // provide
 provide('headerRef', headerRef)
+provide('mobileNavRef', mobileNavRef)
 provide('headerHeight', height)
+provide('navHeight', navHeight)
 
 onMounted(() => {
   useSmoothScroll()

@@ -46,11 +46,11 @@ onMounted(() => {
 </script>
 
 <template>
-  <section :id="Section.EVENTS" ref="eventRef" class="max-w-8xl py-block mx-auto">
+  <section :id="Section.EVENTS" ref="eventRef" class="xl:max-w-8xl md:max-w-2.5xl py-block mx-auto">
     <!-- Page Title -->
     <PageTitle ref="pageTitleRef" tag="LATEST EVENTS" :title="title" />
 
-    <ul class="mt-16 grid grid-flow-col gap-7">
+    <ul class="mt-16 grid xl:grid-flow-col md:grid-flow-row gap-7">
       <!-- Articles -->
       <template v-for="event, index in eventList" :key="event.title">
         <li
@@ -62,9 +62,9 @@ onMounted(() => {
             class="rounded-2xl group-first:row-span-6 group-first:w-full group-first:h-auto group-[&:not(:first-child)]:row-span-6"
             :src="event.imageUrl"
           />
-          <div class="group-first:col-span-1 group-[&:not(:first-child)]:row-span-6 group-[&:not(:first-child)]:col-span-2">
+          <div class="group-first:col-span-1 group-[&:not(:first-child)]:row-span-6 group-[&:not(:first-child)]:col-span-2 grid gap-y-2">
             <time class="text-secondary text-remark" :datetime="event.date">{{ event.date }}</time>
-            <h5 v-if="index === 1" class="secTitle">
+            <h5 v-if="index === 0" class="secTitle">
               {{ event.title }}
             </h5>
             <h6 v-else class="text-base font-bold secTitle">
