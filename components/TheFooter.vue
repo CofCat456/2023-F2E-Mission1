@@ -2,7 +2,7 @@
 
 <template>
   <footer class="bg-colorTheme2">
-    <div class="md:mx-9 flex xl:flex-row flex-col items-start gap-x-4 gap-y-6">
+    <div class="flex xl:flex-row flex-col items-start gap-x-4 gap-y-6">
       <!-- Left box -->
       <div class="flex-1 flex flex-col gap-4">
         <!-- Title -->
