@@ -26,10 +26,13 @@ defineExpose({
 </script>
 
 <template>
+  <!-- NOTE: Lenis overflow scroll issues#14 https://github.com/studio-freight/lenis/issues/14 -->
   <div
     class="h-screen w-screen fixed top-0 left-0 flex items-center justify-center md:p-12 p-5 duration-300 z-50" :class="[
       showed ? 'opacity-100' : 'pointer-events-none opacity-0',
     ]"
+    @wheel="event => event.stopPropagation()"
+    @touchmove="event => event.stopPropagation()"
   >
     <!-- Modal-Overlay -->
     <div
