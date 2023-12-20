@@ -31,4 +31,7 @@ function complete() {
       />
     </client-only>
   </section>
+  <p class="font-mantou invisible">
+    CofCat
+  </p>
 </template>

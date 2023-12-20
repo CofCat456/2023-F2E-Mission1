@@ -1,5 +1,5 @@
 import Lenis from '@studio-freight/lenis'
 
-export default defineNuxtPlugin((nuxtApp) => {
+export default defineNuxtPlugin(() => {
   return { provide: { Lenis } }
 })
