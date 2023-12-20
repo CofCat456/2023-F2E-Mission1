@@ -34,15 +34,31 @@
   body {
     @apply font-inter text-base text-primary;
   }
+
+  #advocate,
+  #events,
+  #policy,
+  #contact,
+  #slogan {
+    @apply xl:max-w-8xl md:max-w-2.5xl max-w-full sm:mx-auto sm:px-0 px-4 py-block;
+  }
+
+  footer {
+    @apply sm:px-0 px-4 py-block bg-colorTheme2;
+
+    &>div {
+      @apply xl:max-w-8xl md:max-w-2.5xl max-w-full sm:mx-auto;
+    }
+  }
 }
 
 @layer components {
   .py-block {
-    @apply xl:py-[104px] md:py-16
+    @apply xl:py-[104px] py-16
   }
 
   .text-title {
-    @apply xl:text-[64px] text-[52px] font-mantou leading-normal;
+    @apply xl:text-[64px] sm:text-[52px] text-5xl font-mantou leading-normal;
   }
 
   .text-remark {

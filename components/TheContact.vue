@@ -72,15 +72,15 @@ onMounted(() => {
 </script>
 
 <template>
-  <section :id="Section.CONTACT" ref="contactRef" class="xl:max-w-8xl md:max-w-2.5xl py-block mx-auto">
-    <ul class="grid grid-cols-2 gap-x-6">
+  <section :id="Section.CONTACT" ref="contactRef">
+    <ul class="grid md:grid-cols-2 grid-cols-1 gap-x-6 gap-y-4">
       <template v-for="contact in contactList" :key="contact.title">
         <li
           ref="contactBoxsRef"
-          class="flex flex-col xl:p-24 md:py-10 md:px-6 rounded-[32px] text-white"
+          class="flex flex-col xl:p-24 py-10 px-6 rounded-[32px] text-white xl:border-none border border-[rgba(255,255,255,.3)]"
           :class="`${contact.theme === 'default' ? 'bg-primaryTheme' : 'bg-primary'}`"
         >
-          <p class="font-mantou xl:text-[52px] md:text-[40px] leading-none mb-4">
+          <p class="font-mantou xl:text-[52px] text-[40px] leading-none mb-4">
             {{ contact.title }}
           </p>
           <h5 class="font-semibold mb-6">
@@ -91,7 +91,7 @@ onMounted(() => {
               {{ contact.btnText }}
             </BasicButton>
             <NuxtImg
-              class="xl:w-1/2 md:w-full h-auto object-cover"
+              class="xl:w-1/2 w-[100px] h-auto object-cover"
               :src="contact.imageUrl"
               loading="lazy"
             />

@@ -27,7 +27,7 @@ defineExpose({
 
 <template>
   <div
-    class="h-screen w-screen fixed top-0 left-0 flex items-center justify-center md:p-12 sm:p-5 duration-300 z-50" :class="[
+    class="h-screen w-screen fixed top-0 left-0 flex items-center justify-center md:p-12 p-5 duration-300 z-50" :class="[
       showed ? 'opacity-100' : 'pointer-events-none opacity-0',
     ]"
   >
@@ -46,7 +46,7 @@ defineExpose({
       <!-- Modal-Header -->
       <div
         ref="modalHeaderRef"
-        class="flex items-center justify-between px-12 py-6"
+        class="flex items-center justify-between sm:px-12 sm:py-6 p-4"
       >
         <!-- Modal-Title -->
         <h2 class="font-bold">
@@ -79,7 +79,7 @@ defineExpose({
 
       <!-- Modal-Content -->
       <div
-        class="w-full px-12 pb-12"
+        class="w-full md:px-12 md:pb-12 px-4 pb-4"
         :style="{
           height: `calc(${modalWindowHeight}px - ${modalHeaderHeight}px)`,
         }"

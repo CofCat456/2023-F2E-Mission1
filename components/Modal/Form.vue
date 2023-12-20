@@ -2,7 +2,7 @@
 import { Modal } from '#components'
 import type { ContactData } from '~/types'
 
-const props = defineProps<{
+defineProps<{
   title: string
   data: ContactData
   dataList: ContactData[]
@@ -16,8 +16,6 @@ defineEmits<{
   onSubmit: []
 }>()
 
-const getNoCommaSlogan = computed(() => props.data.slogan.replace('，', ' '))
-
 const modalRef: Ref<InstanceType<typeof Modal> | null> | undefined = inject('modalRef')
 </script>
 
@@ -28,7 +26,7 @@ const modalRef: Ref<InstanceType<typeof Modal> | null> | undefined = inject('mod
     </template>
 
     <template #modalContent>
-      <div class="flex xl:p-0 md:p-4 xl:flex-row md:flex-col h-full gap-8 xl:overflow-y-visible md:overflow-y-auto scrollbar-thin">
+      <div class="flex xl:pr-0 sm:pr-4 pr-2 xl:flex-row flex-col h-full gap-8 xl:overflow-y-visible overflow-y-auto scrollbar-thin">
         <!-- Left Modal Block -->
         <aside
           class="flex-1 flex justify-between flex-col rounded-3xl"
@@ -36,16 +34,18 @@ const modalRef: Ref<InstanceType<typeof Modal> | null> | undefined = inject('mod
         >
           <div class="w-full xl:p-10 p-6">
             <h1
-              class="font-bold new-line"
+              class="font-bold new-line sm:text-[40px] md:text-[32px] text-base leading-normal"
               :class="`${data.theme === 'default' ? 'text-primaryTheme ' : 'text-primary'}`"
             >
-              {{ getNoCommaSlogan }}
+              {{ data.slogan }}
             </h1>
             <div v-if="data.id === 'donate'" class="mt-4">
-              <p>
+              <p class="sm:text-base text-remark">
                 目前小額贊助總金額
               </p>
-              <h2>987,655,873</h2>
+              <h2 class="xl:text-[32px] md:text-[24px] text-xl">
+                987,655,873
+              </h2>
             </div>
           </div>
           <div
@@ -54,6 +54,7 @@ const modalRef: Ref<InstanceType<typeof Modal> | null> | undefined = inject('mod
           >
             <NuxtImg
               v-if="data.modalImageUrl !== ''"
+              class="sm:max-w-full max-w-[100px]"
               densities="x1"
               fit="cover"
               :src="data.modalImageUrl"
@@ -74,9 +75,9 @@ const modalRef: Ref<InstanceType<typeof Modal> | null> | undefined = inject('mod
                 </button>
               </slot>
             </div>
-            <div v-else class="pr-4">
+            <div v-else class="xl:pr-4">
               <slot name="form" />
-              <button :disabled="!btnStatus || isLoading" class="inline-flex items-center justify-center gap-2 w-full bg-primaryTheme border border-white rounded-full px-8 py-6 text-center font-semibold text-white hover:bg-transparent hover:text-primaryTheme hover:border-primaryTheme transition-[opacity,colors] duration-300 disabled:opacity-70 disabled:pointer-events-none" @click="$emit('onSubmit')">
+              <button :disabled="!btnStatus || isLoading" class="inline-flex items-center justify-center gap-2 w-full bg-primaryTheme border border-white rounded-full sm:px-8 sm:py-6 p-4 text-center font-semibold text-white hover:bg-transparent hover:text-primaryTheme hover:border-primaryTheme transition-[opacity,colors] duration-300 disabled:opacity-70 disabled:pointer-events-none" @click="$emit('onSubmit')">
                 <svg
                   v-if="isLoading"
                   class="h-6 w-6 animate-spin py-1 text-white"
@@ -113,11 +114,6 @@ const modalRef: Ref<InstanceType<typeof Modal> | null> | undefined = inject('mod
   white-space: pre-wrap;
   word-wrap: break-word;
   word-break: keep-all;
-
-  &::after {
-  content: "";
-  visibility: hidden;
-  }
 }
 
 .fade-enter-active,

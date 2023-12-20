@@ -5,6 +5,7 @@ export enum Section {
   EVENTS = 'events',
   POLICY = 'policy',
   CONTACT = 'contact',
+  SLOGAN = 'slogan',
 }
 
 export interface Nav {

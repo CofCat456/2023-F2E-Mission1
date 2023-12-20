@@ -2,15 +2,15 @@
 import { ref } from 'vue'
 
 const headerRef = ref<HTMLHeadElement | null>(null)
-const mobileNavRef = ref<HTMLHeadElement | null>(null)
+const tableNavRef = ref<HTMLHeadElement | null>(null)
 const isLoading = ref(true)
 
 const { height } = useElementBounding(headerRef)
-const { height: navHeight } = useElementBounding(mobileNavRef)
+const { height: navHeight } = useElementBounding(tableNavRef)
 
 // provide
 provide('headerRef', headerRef)
-provide('mobileNavRef', mobileNavRef)
+provide('tableNavRef', tableNavRef)
 provide('headerHeight', height)
 provide('navHeight', navHeight)
 
@@ -31,6 +31,7 @@ onMounted(() => {
     <TheContact />
     <TheSlogan />
     <TheFooter />
-    <MobileNav />
+    <TableNav />
+    <MobileSociaMediaBtns />
   </template>
 </template>
