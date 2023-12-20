@@ -1,3 +1,17 @@
+// Section
+
+export enum Section {
+  ADVOCATE = 'advocate',
+  EVENTS = 'events',
+  POLICYISSUSE = 'policyIssuse',
+  CONTACT = 'contact',
+}
+
+export interface Nav {
+  title: string
+  target: Section
+}
+
 // Icon
 export type Icon = 'fb' | 'ig' | 'line' | 'youtube' | 'twitter'
 

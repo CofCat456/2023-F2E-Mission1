@@ -1,4 +1,27 @@
-import type { ContactData, Data, Donate, Form } from '~/types'
+import { type ContactData, type Data, type Donate, type Form, type Nav, Section } from '~/types'
+
+export const navList: Nav[] = [
+  {
+    title: '候選人主張',
+    target: Section.ADVOCATE,
+  },
+  {
+    title: '最新活動',
+    target: Section.EVENTS,
+  },
+  {
+    title: '政策議題',
+    target: Section.POLICYISSUSE,
+  },
+  {
+    title: '小額捐款',
+    target: Section.CONTACT,
+  },
+  {
+    title: '民眾服務信箱',
+    target: Section.CONTACT,
+  },
+]
 
 export const eventList: Data[] = [
   {

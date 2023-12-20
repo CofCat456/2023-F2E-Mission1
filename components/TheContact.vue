@@ -1,5 +1,6 @@
 <script lang="ts" setup>
 import type { BasicModal } from '#components'
+import { Section } from '~/types'
 import type { ContactData, ContactType, FormData } from '~/types'
 import { contactList } from '~/data'
 
@@ -71,7 +72,7 @@ onMounted(() => {
 </script>
 
 <template>
-  <section ref="contactRef" class="max-w-8xl py-block mx-auto">
+  <section :id="Section.CONTACT" ref="contactRef" class="max-w-8xl py-block mx-auto">
     <ul class="grid grid-cols-2 gap-x-6">
       <template v-for="contact in contactList" :key="contact.title">
         <li

@@ -2,6 +2,7 @@
 import type { BasicModal } from '#components'
 import { PageTitle } from '#components'
 import { eventList } from '~/data'
+import { Section } from '~/types'
 import type { Data } from '~/types'
 
 const { gsap } = useGsap()
@@ -45,7 +46,7 @@ onMounted(() => {
 </script>
 
 <template>
-  <section ref="eventRef" class="max-w-8xl py-block mx-auto">
+  <section :id="Section.EVENTS" ref="eventRef" class="max-w-8xl py-block mx-auto">
     <!-- Page Title -->
     <PageTitle ref="pageTitleRef" tag="LATEST EVENTS" :title="title" />
 

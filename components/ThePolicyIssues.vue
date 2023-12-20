@@ -2,7 +2,7 @@
 import type { BasicModal } from '#components'
 import { PageTitle } from '#components'
 import { policyList } from '~/data'
-import type { Data } from '~/types'
+import { type Data, Section } from '~/types'
 
 const { gsap } = useGsap()
 
@@ -42,7 +42,7 @@ onMounted(() => {
 </script>
 
 <template>
-  <section ref="policyIssuseRef" class="max-w-8xl py-block mx-auto">
+  <section :id="Section.POLICYISSUSE" ref="policyIssuseRef" class="max-w-8xl py-block mx-auto">
     <!-- Page Title -->
     <PageTitle ref="pageTitleRef" tag="POLICY ISSUES" :title="title" />
 
