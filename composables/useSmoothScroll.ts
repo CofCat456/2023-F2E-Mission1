@@ -8,7 +8,6 @@ export function useSmoothScroll() {
   const lenis = new Lenis({
     lerp: 0.1,
     smoothTouch: true,
-    easing: t => Math.min(1, 1.001 - 2 ** (-10 * t)),
   })
 
   lenis.on('scroll', ScrollTrigger.update)
