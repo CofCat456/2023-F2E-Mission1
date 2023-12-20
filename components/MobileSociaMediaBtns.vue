@@ -24,11 +24,7 @@ const getShowList = computed(() => iconList.filter(({ icon }: { icon: Icon }) =>
 </script>
 
 <template>
-<<<<<<< HEAD
   <ul v-if="xs" class="fixed left-1/2 -translate-x-1/2 bottom-5 flex items-center gap-4 bg-white rounded-xl sm:px-10 px-4 py-2 shadow-[0_1px_4px_0_rgba(0,0,0,0.1)]">
-=======
-  <ul v-if="xs" class="fixed left-1/2 -translate-x-1/2 bottom-5 flex items-center gap-4 bg-white rounded-xl px-10 py-2 shadow-[0_1px_4px_0_rgba(0,0,0,0.1)]">
->>>>>>> e95abacdc44a61ce3736d59b9ef40c34ea73c733
     <template v-for="{ icon, link } in getShowList" :key="icon">
       <li class="bg-white rounded-full hover:scale-105 transition-transform cursor-pointer">
         <NuxtLink :to="link" target="_blank">
