@@ -36,22 +36,19 @@ const modalRef: Ref<InstanceType<typeof BasicModal> | null> | undefined = inject
         </aside>
 
         <!-- Right Modal Block -->
-        <div class="flex-1 mb-4 pr-4 overflow-y-auto scrollbar-thin">
+        <div class="flex-1 pr-4 overflow-y-auto scrollbar-thin">
           <h2 class="text-primaryTheme mb-2">
             {{ data.title }}
           </h2>
           <time class="text-secondary text-remark" :datetime="data.date">{{ data.date }}</time>
-          <p class="mt-10 mb-24">
-            {{ data.text }}
-          </p>
-
+          <div class="mt-10 mb-24 grid gap-y-6" v-html="data.text" />
           <!-- More events -->
           <div class="p-4 rounded-xl bg-colorTheme3">
             <p class="font-semibold mb-4">
               更多活動
             </p>
             <ul class="grid grid-cols-3 gap-4">
-              <li v-for="{ title, imageUrl } in getNotSelectList" :key="title">
+              <li v-for="{ id, title, imageUrl } in getNotSelectList" :key="id">
                 <NuxtImg class="mb-3 rounded-xl" :src="imageUrl" />
                 {{ title }}
               </li>

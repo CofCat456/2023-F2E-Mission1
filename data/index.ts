@@ -58,19 +58,19 @@ export const policyList: Data[] = [
   {
     id: Math.random() + 1,
     title: '為毛孩子謀福利！\n推動寵物醫療保障方案',
-    text: '',
+    text: '<div class="grid gap-y-2"><h5>設立寵物醫療基金</h5> 每年撥款新台幣 10 億元，專款專用於支援家庭寵物的醫療費用</div><div class="grid gap-y-2"><h5>提供醫療補助</h5> 每隻寵物每年可獲得高達新台幣 20,000 元的醫療補助，減輕飼主的經濟壓力</div><div class="grid gap-y-2"><h5>合作動物醫院金</h5> 目前已有和超過 200 家動物醫院進行初步的合作討論</div>',
     imageUrl: 'img_policy1.png',
   },
   {
     id: Math.random() + 2,
     title: '打造休閒天堂！\n推廣寵物休閒與娛樂場所',
-    text: '',
+    text: '<div class="grid gap-y-2"><h5>設立寵物醫療基金</h5> 每年撥款新台幣 10 億元，專款專用於支援家庭寵物的醫療費用</div><div class="grid gap-y-2"><h5>提供醫療補助</h5> 每隻寵物每年可獲得高達新台幣 20,000 元的醫療補助，減輕飼主的經濟壓力</div><div class="grid gap-y-2"><h5>合作動物醫院金</h5> 目前已有和超過 200 家動物醫院進行初步的合作討論</div>',
     imageUrl: 'img_policy2.png',
   },
   {
     id: Math.random() + 3,
     title: '推廣寵物飼養教育，讓愛更加專業',
-    text: '',
+    text: '<div class="grid gap-y-2"><h5>設立寵物醫療基金</h5> 每年撥款新台幣 10 億元，專款專用於支援家庭寵物的醫療費用</div><div class="grid gap-y-2"><h5>提供醫療補助</h5> 每隻寵物每年可獲得高達新台幣 20,000 元的醫療補助，減輕飼主的經濟壓力</div><div class="grid gap-y-2"><h5>合作動物醫院金</h5> 目前已有和超過 200 家動物醫院進行初步的合作討論</div>',
     imageUrl: 'img_policy3.png',
   },
 ]

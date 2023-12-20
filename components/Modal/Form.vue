@@ -73,7 +73,7 @@ const modalRef: Ref<InstanceType<typeof BasicModal> | null> | undefined = inject
                 </button>
               </slot>
             </div>
-            <div v-else class="mb-4 pr-4">
+            <div v-else class="pr-4">
               <slot name="form" />
               <button :disabled="!btnStatus || isLoading" class="inline-flex items-center justify-center gap-2 w-full bg-primaryTheme border border-white rounded-full px-8 py-6 text-center font-semibold text-white hover:bg-transparent hover:text-primaryTheme hover:border-primaryTheme transition-[opacity,colors] duration-300 disabled:opacity-70 disabled:pointer-events-none" @click="$emit('onSubmit')">
                 <svg
