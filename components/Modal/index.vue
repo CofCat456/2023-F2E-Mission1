@@ -44,7 +44,7 @@ defineExpose({
     <!-- FIXME: vueuse issues #3657 -->
     <div
       ref="modalWindowRef"
-      class="md:max-w-[1400px] md:max-h-[calc(100dvh-48px*2)] w-full h-full rounded-lg bg-white overflow-hidden z-10"
+      class="md:max-w-[1400px] md:max-h-[calc(90dvh-48px*2)] max-h-[calc(90dvh-20px*2)] w-full h-full rounded-lg bg-white overflow-hidden z-10"
     >
       <!-- Modal-Header -->
       <div
