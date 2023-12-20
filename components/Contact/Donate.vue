@@ -29,14 +29,14 @@ const modelDonateNum = computed({
     <li
       v-for="{ title, price, donateNum } in donatePlanList"
       :key="title"
-      class="flex justify-between items-center py-6 px-4 rounded-2xl border-2 border-colorTheme4 transition-colors group cursor-pointer"
+      class="flex sm:flex-nowrap flex-wrap justify-between items-center gap-y-2 py-6 px-4 rounded-2xl border-2 border-colorTheme4 transition-colors group cursor-pointer"
       :class="(currentDonateNum === price) && (customDonateNum === undefined || Number(customDonateNum) <= 0) ? 'border-primaryTheme' : 'hover:border-primaryTheme'"
       @click="selectPlan(price)"
     >
-      <h5 class="group-hover:text-primaryTheme transition-colors">
+      <h5 class="sm:w-auto w-full text-primaryTheme transition-colors">
         {{ title }}
       </h5>
-      <div class="flex items-center gap-6">
+      <div class="sm:w-auto w-full flex flex-wrap justify-between items-center gap-x-6 gap-y-2">
         <h4 class="inline-flex justify-end items-center">
           <span class="mr-2 font-normal text-base">NT$</span>{{ currency(price, '') }}
         </h4>
@@ -49,7 +49,7 @@ const modelDonateNum = computed({
       class="flex flex-col py-6 px-4 rounded-2xl border-2 border-colorTheme4 hover:border-primaryTheme transition-colors group cursor-pointer"
       :class="customDonateNum === currentDonateNum ? 'border-primaryTheme' : 'hover:border-primaryTheme'"
     >
-      <h5 class="flex-1 group-hover:text-primaryTheme transition-colors">
+      <h5 class="flex-1 text-primaryTheme transition-colors">
         自訂贊助金額
       </h5>
       <input

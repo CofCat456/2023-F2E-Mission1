@@ -47,7 +47,7 @@ onMounted(() => {
     <PageTitle ref="pageTitleRef" tag="POLICY ISSUES" :title="title" />
 
     <!-- PolicyIssues Block -->
-    <ul class="mt-16 grid xl:grid-cols-3 md:grid-cols-2 xl:gap-x-16 md:gap-x-6 gap-y-16">
+    <ul class="xl:mt-16 mt-10 grid xl:grid-cols-3 md:grid-cols-2 xl:gap-x-16 md:gap-x-6 gap-y-16">
       <template v-for="policy in policyList " :key="policy.id">
         <li
           ref="policysRef"

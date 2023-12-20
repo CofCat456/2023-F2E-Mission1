@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import type { Modal } from '#components'
 import { PageTitle } from '#components'
 import { eventList } from '~/data'
 import { Section } from '~/types'
@@ -45,20 +46,20 @@ onMounted(() => {
 </script>
 
 <template>
-  <section :id="Section.EVENTS" ref="eventRef" class="xl:max-w-8xl md:max-w-2.5xl py-block mx-auto">
+  <section :id="Section.EVENTS" ref="eventRef">
     <!-- Page Title -->
     <PageTitle ref="pageTitleRef" tag="LATEST EVENTS" :title="title" />
 
-    <ul class="mt-16 grid xl:grid-flow-col md:grid-flow-row gap-7">
+    <ul class="xl:mt-16 mt-10 grid xl:grid-flow-col md:grid-flow-row gap-7">
       <!-- Articles -->
       <template v-for="event, index in eventList" :key="event.title">
         <li
           ref="articlesRef"
-          class="first:row-span-4 first:grid-flow-row grid grid-flow-col gap-y-3 gap-x-4 cursor-pointer group"
+          class="first:row-span-4 first:grid-flow-row grid grid-flow-col sm:gap-x-4 gap-x-2 gap-y-3 cursor-pointer group"
           @click="openEventModal(event)"
         >
           <NuxtImg
-            class="rounded-2xl group-first:row-span-6 group-first:w-full group-first:h-auto group-[&:not(:first-child)]:row-span-6"
+            class="rounded-2xl group-first:row-span-6 group-first:w-full group-first:h-auto group-[&:not(:first-child)]:row-span-6 object-cover h-full"
             :src="event.imageUrl"
             loading="lazy"
           />
@@ -70,7 +71,9 @@ onMounted(() => {
             <h6 v-else class="text-base font-bold secTitle">
               {{ event.title }}
             </h6>
-            <p>{{ event.text }}</p>
+            <p class="sm:line-clamp-none line-clamp-1">
+              {{ event.text }}
+            </p>
           </div>
         </li>
       </template>

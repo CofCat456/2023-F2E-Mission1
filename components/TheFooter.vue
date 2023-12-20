@@ -1,8 +1,8 @@
 <script lang="ts" setup></script>
 
 <template>
-  <footer class="bg-colorTheme2 xl:py-16 md:pt-16 md:pb-32">
-    <div class="max-w-footer xl:mx-auto md:mx-9 flex xl:flex-row md:flex-col items-start gap-x-4 gap-y-6">
+  <footer class="bg-colorTheme2">
+    <div class="md:mx-9 flex xl:flex-row flex-col items-start gap-x-4 gap-y-6">
       <!-- Left box -->
       <div class="flex-1 flex flex-col gap-4">
         <!-- Title -->
@@ -12,7 +12,7 @@
               3
             </p>
           </div>
-          <h3 class="text-primaryTheme font-bold">
+          <h3 class="text-primaryTheme font-bold sm:text-[28px] text-2xl">
             喵立翰 Miao Li-Han
           </h3>
         </div>

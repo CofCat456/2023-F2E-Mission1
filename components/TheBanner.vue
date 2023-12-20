@@ -33,25 +33,25 @@ onMounted(() => {
   >
     <div class="text-center inline-block xl:mt-24 md:mt-8 cursor-default">
       <!-- Title -->
-      <h2 ref="titleRef" class="xl:max-w-full md:max-w-[360px] mx-auto font-mantou font-normal xl:text-8xl md:text-title tracking-2 text-gradientTheme">
+      <h2 ref="titleRef" class="xl:max-w-full max-w-[360px] mx-auto font-mantou font-normal xl:text-8xl text-title leading-none tracking-2 text-gradientTheme">
         台灣的明天 喵先鋪路
       </h2>
 
       <!-- Buttons -->
-      <div class="my-4 flex items-center gap-4 justify-center">
+      <div class="my-4 flex md:flex-row flex-col justify-center items-center gap-4">
         <div ref="leftBtnRef" class="bg-primary inline-block rounded-2xl py-3 px-4 cursor-default">
           <h3 class="text-white xl:text-[28px] text-xl">
             2024 立委參選人
           </h3>
         </div>
 
-        <div ref="rightBtnRef" class="flex items-center gap-5 border border-white shadow rounded-2xl px-4 py-3 cursor-default">
-          <div class="relative xl:w-[50px] md:w-[40px] bg-gradientTheme rounded-full aspect-square">
-            <p class="font-black text-white xl:text-[32px] md:text-2xl absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
+        <div ref="rightBtnRef" class="flex items-center gap-4 border border-white shadow-[0_4px_12px_0_rgba(163,180,203,.2)] rounded-2xl px-4 py-3 cursor-default">
+          <div class="relative xl:w-[50px] w-[40px] bg-gradientTheme rounded-full aspect-square">
+            <p class="font-black text-white xl:text-[32px] text-2xl absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
               3
             </p>
           </div>
-          <h1 class="text-primaryTheme font-bold xl:text-[40px] md:text-[28px]">
+          <h1 class="text-primaryTheme font-bold xl:text-[40px] sm:text-[28px] text-2xl">
             喵立翰 Miao Li-Han
           </h1>
         </div>
@@ -64,9 +64,3 @@ onMounted(() => {
     </div>
   </section>
 </template>
-
-<style scoped>
-.shadow {
-  box-shadow: 0px 4px 12px 0px #A3B4CB33;
-}
-</style>

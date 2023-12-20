@@ -10,7 +10,7 @@ const props = withDefaults(defineProps<{
 
 <template>
   <button
-    class="inline-flex max-w-max items-center gap-2 py-4 px-6 rounded-full text-primary border border-white  transition-colors whitespace-nowrap"
+    class="inline-flex max-w-max items-center gap-2 sm:py-4 sm:px-6 p-4 rounded-full text-primary border border-white  transition-colors whitespace-nowrap"
     :class="[`${props.theme}`]"
   >
     <h6 class="text-base">

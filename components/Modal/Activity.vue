@@ -20,7 +20,7 @@ const modalRef: Ref<InstanceType<typeof Modal> | null> | undefined = inject('mod
     </template>
 
     <template #modalContent>
-      <div class="flex xl:p-0 md:p-4 xl:flex-row md:flex-col h-full gap-8 xl:overflow-y-visible md:overflow-y-auto scrollbar-thin">
+      <div class="flex xl:pr-0 sm:pr-4 pr-2 xl:flex-row flex-col h-full gap-8 xl:overflow-y-visible overflow-y-auto scrollbar-thin">
         <!-- Left Modal Block -->
         <aside class="xl:w-2/5 md:w-full">
           <NuxtImg
@@ -33,7 +33,7 @@ const modalRef: Ref<InstanceType<typeof Modal> | null> | undefined = inject('mod
           <p class="mt-4 text-remark">
             {{ data.title }}
           </p>
-          <div class="flex items-center gap-1">
+          <div class="flex items-center sm:text-base text-sm">
             分享
 
             <!-- Social Media Btns -->
@@ -42,20 +42,20 @@ const modalRef: Ref<InstanceType<typeof Modal> | null> | undefined = inject('mod
         </aside>
 
         <!-- Right Modal Block -->
-        <div class="flex-1 pr-4 xl:overflow-y-auto scrollbar-thin">
+        <div class="flex-1 xl:pr-4 xl:overflow-y-auto scrollbar-thin">
           <h2 class="text-primaryTheme mb-2">
             {{ data.title }}
           </h2>
           <time class="text-secondary text-remark" :datetime="data.date">{{ data.date }}</time>
-          <div class="mt-10 mb-24 grid gap-y-6" v-html="data.text" />
+          <div class="mt-10 sm:mb-24 mb-12 grid gap-y-6" v-html="data.text" />
           <!-- More events -->
           <div class="p-4 rounded-xl bg-colorTheme3">
             <p class="font-semibold mb-4">
               更多活動
             </p>
-            <ul class="grid grid-cols-3 gap-4">
+            <ul class="grid md:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-4">
               <li v-for="{ id, title, imageUrl } in getNotSelectList" :key="id">
-                <NuxtImg class="w-full mb-3 rounded-xl" :src="imageUrl" loading="lazy" />
+                <NuxtImg class="w-full mb-3 rounded-xl aspect-[4/3]" :src="imageUrl" loading="lazy" />
                 {{ title }}
               </li>
             </ul>

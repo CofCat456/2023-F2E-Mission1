@@ -1,8 +1,12 @@
 <script setup lang="ts">
+import { breakpointsTailwind, useBreakpoints } from '@vueuse/core'
 import { navList } from '~/data'
 
 const { ScrollTrigger } = useGsap()
 const { scrollTo } = useSmoothScroll()
+
+const breakpoints = useBreakpoints(breakpointsTailwind)
+const sm = breakpoints.greater('sm')
 
 const headerRef: Ref<HTMLHeadElement> | undefined = inject('headerRef')
 
@@ -16,18 +20,19 @@ onMounted(() => {
 </script>
 
 <template>
-  <header ref="headerRef" class="sticky top-0 bg-colorTheme1 w-full px-6 py-4 z-40 transition-colors">
-    <div class="bg-white border w-full border-white px-8 py-3 rounded-2xl flex justify-between">
+  <!-- NOTE: mobile animations -->
+  <header ref="headerRef" class="sticky top-0 bg-colorTheme1 w-full md:px-6 md:py-4 px-4 py-3 z-40 transition-colors">
+    <div class="bg-white border w-full border-white md:px-8 sm:px-4 px-2 py-3 rounded-2xl flex justify-between">
       <!-- Logo -->
       <div class="flex items-center gap-2 text-primaryTheme">
-        <NuxtImg sizes="32px" src="/logo.svg" />
+        <NuxtImg densities="x1" width="32" src="/logo.svg" />
         <h4>
           喵立翰 Miao Li-Han
         </h4>
       </div>
 
       <!-- Nav -->
-      <nav class="my-auto xl:block hidden">
+      <nav class="my-auto lg:block hidden">
         <ul class="flex items-center gap-4">
           <template v-for="nav in navList" :key="nav.id">
             <li class="cursor-pointer rounded-lg text-primary hover:text-primaryTheme" @click="scrollTo(nav.target)">
@@ -40,7 +45,7 @@ onMounted(() => {
       </nav>
 
       <!-- Social Media Btns -->
-      <SocialMediaBtns />
+      <SocialMediaBtns v-if="sm" />
     </div>
   </header>
 </template>
