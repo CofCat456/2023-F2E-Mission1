@@ -25,7 +25,7 @@ onMounted(() => {
 
 <template>
   <section :id="Section.ADVOCATE" ref="advocateRef" class="py-block bg-colorTheme2">
-    <div class="max-w-8xl mx-auto flex items-stretch rounded-3xl overflow-hidden">
+    <div class="xl:max-w-8xl md:max-w-2.5xl mx-auto flex xl:flex-row flex-col items-stretch rounded-3xl overflow-hidden">
       <div ref="leftSideRef" class="flex-1 bg-white py-16 px-10">
         <!-- Page Title -->
         <PageTitle tag="ADVOCATE" title="候選人主張" />
@@ -44,7 +44,12 @@ onMounted(() => {
       </div>
 
       <!-- Img -->
-      <NuxtImg ref="rightSideRef" width="647" src="/img_advocate.png" />
+      <NuxtImg
+        ref="rightSideRef"
+        class="max-w-full min-w-[647px] h-auto object-cover"
+        src="/img_advocate.png"
+        loading="lazy"
+      />
     </div>
   </section>
 </template>

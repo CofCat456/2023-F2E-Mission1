@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import { BasicModal } from '#components'
+import { Modal } from '#components'
 import type { Data } from '~/types'
 
 const props = defineProps<{
@@ -10,20 +10,26 @@ const props = defineProps<{
 
 const getNotSelectList = computed(() => props.dataList.filter((data: Data) => data.title !== props.data.title))
 
-const modalRef: Ref<InstanceType<typeof BasicModal> | null> | undefined = inject('modalRef')
+const modalRef: Ref<InstanceType<typeof Modal> | null> | undefined = inject('modalRef')
 </script>
 
 <template>
-  <BasicModal ref="modalRef">
+  <Modal ref="modalRef">
     <template #modalTitle>
       {{ title }}
     </template>
 
     <template #modalContent>
-      <div class="flex h-full gap-8">
+      <div class="flex xl:p-0 md:p-4 xl:flex-row md:flex-col h-full gap-8 xl:overflow-y-visible md:overflow-y-auto scrollbar-thin">
         <!-- Left Modal Block -->
-        <aside class="w-2/5">
-          <NuxtImg v-if="data.imageUrl !== ''" class="w-full rounded-3xl" fit="cover" :src="data.imageUrl" />
+        <aside class="xl:w-2/5 md:w-full">
+          <NuxtImg
+            v-if="data.imageUrl !== ''"
+            class="w-full rounded-3xl"
+            fit="cover"
+            :src="data.imageUrl"
+            loading="lazy"
+          />
           <p class="mt-4 text-remark">
             {{ data.title }}
           </p>
@@ -36,7 +42,7 @@ const modalRef: Ref<InstanceType<typeof BasicModal> | null> | undefined = inject
         </aside>
 
         <!-- Right Modal Block -->
-        <div class="flex-1 pr-4 overflow-y-auto scrollbar-thin">
+        <div class="flex-1 pr-4 xl:overflow-y-auto scrollbar-thin">
           <h2 class="text-primaryTheme mb-2">
             {{ data.title }}
           </h2>
@@ -49,7 +55,7 @@ const modalRef: Ref<InstanceType<typeof BasicModal> | null> | undefined = inject
             </p>
             <ul class="grid grid-cols-3 gap-4">
               <li v-for="{ id, title, imageUrl } in getNotSelectList" :key="id">
-                <NuxtImg class="mb-3 rounded-xl" :src="imageUrl" />
+                <NuxtImg class="w-full mb-3 rounded-xl" :src="imageUrl" loading="lazy" />
                 {{ title }}
               </li>
             </ul>
@@ -57,5 +63,5 @@ const modalRef: Ref<InstanceType<typeof BasicModal> | null> | undefined = inject
         </div>
       </div>
     </template>
-  </BasicModal>
+  </Modal>
 </template>

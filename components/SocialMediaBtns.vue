@@ -24,7 +24,7 @@ const getShowList = computed(() => iconList.filter(({ icon }: { icon: Icon }) =>
     <template v-for="{ icon, link } in getShowList" :key="icon">
       <li class="p-2 bg-white rounded-full hover:brightness-90 duration-300 cursor-pointer">
         <NuxtLink :to="link" target="_blank">
-          <NuxtImg width="32" :src="`/icon/${icon}.svg`" />
+          <NuxtImg densities="x1" :src="`/icon/${icon}.svg`" />
         </NuxtLink>
       </li>
     </template>

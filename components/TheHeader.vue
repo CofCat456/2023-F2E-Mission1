@@ -27,10 +27,10 @@ onMounted(() => {
       </div>
 
       <!-- Nav -->
-      <nav class="menu my-auto">
+      <nav class="my-auto xl:block hidden">
         <ul class="flex items-center gap-4">
-          <template v-for="nav in navList" :key="nav.title">
-            <li class="gap-4 cursor-pointer rounded-lg text-primary hover:text-primaryTheme" @click="scrollTo(nav.target)">
+          <template v-for="nav in navList" :key="nav.id">
+            <li class="cursor-pointer rounded-lg text-primary hover:text-primaryTheme" @click="scrollTo(nav.target)">
               <h6 class="p-2">
                 {{ nav.title }}
               </h6>

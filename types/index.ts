@@ -3,11 +3,12 @@
 export enum Section {
   ADVOCATE = 'advocate',
   EVENTS = 'events',
-  POLICYISSUSE = 'policyIssuse',
+  POLICY = 'policy',
   CONTACT = 'contact',
 }
 
 export interface Nav {
+  id: 'advocate' | 'events' | 'policy' | 'donate' | 'service'
   title: string
   target: Section
 }

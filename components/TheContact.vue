@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import type { BasicModal } from '#components'
+import type { Modal } from '#components'
 import { Section } from '~/types'
 import type { ContactData, ContactType, FormData } from '~/types'
 import { contactList } from '~/data'
@@ -8,7 +8,7 @@ const { gsap } = useGsap()
 
 const contactRef = ref<HTMLElement | null>()
 const contactBoxsRef = ref<HTMLElement[] | null>(null)
-const modalRef = ref<InstanceType<typeof BasicModal> | null>(null)
+const modalRef = ref<InstanceType<typeof Modal> | null>(null)
 
 const isLoading = ref(false)
 const isPass = ref(false)
@@ -72,25 +72,29 @@ onMounted(() => {
 </script>
 
 <template>
-  <section :id="Section.CONTACT" ref="contactRef" class="max-w-8xl py-block mx-auto">
+  <section :id="Section.CONTACT" ref="contactRef" class="xl:max-w-8xl md:max-w-2.5xl py-block mx-auto">
     <ul class="grid grid-cols-2 gap-x-6">
       <template v-for="contact in contactList" :key="contact.title">
         <li
           ref="contactBoxsRef"
-          class="card"
+          class="flex flex-col xl:p-24 md:py-10 md:px-6 rounded-[32px] text-white"
           :class="`${contact.theme === 'default' ? 'bg-primaryTheme' : 'bg-primary'}`"
         >
-          <p class="text-title mb-4">
+          <p class="font-mantou xl:text-[52px] md:text-[40px] leading-none mb-4">
             {{ contact.title }}
           </p>
           <h5 class="font-semibold mb-6">
             {{ contact.text }}
           </h5>
-          <div class="flex-1 flex justify-between items-center">
+          <div class="flex-1 flex justify-between items-center gap-2">
             <BasicButton class="bg-white" :theme="contact.theme" @click="openFormModal(contact)">
               {{ contact.btnText }}
             </BasicButton>
-            <NuxtImg class="max-w-full h-auto" densities="x1" :src="contact.imageUrl" />
+            <NuxtImg
+              class="xl:w-1/2 md:w-full h-auto object-cover"
+              :src="contact.imageUrl"
+              loading="lazy"
+            />
           </div>
         </li>
       </template>
@@ -125,9 +129,3 @@ onMounted(() => {
     </ModalForm>
   </section>
 </template>
-
-<style scoped>
-.card {
-  @apply flex flex-col p-24 rounded-[32px] text-white
-}
-</style>

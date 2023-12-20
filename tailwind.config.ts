@@ -19,11 +19,9 @@ export default <Partial<Config>>{
         2: '0.125em',
       },
       maxWidth: {
+        '2.5xl': '43.5rem',
         '8xl': '82.5rem',
         'footer': '85.5rem',
-      },
-      padding: {
-        block: '104px',
       },
     },
     fontFamily: {
