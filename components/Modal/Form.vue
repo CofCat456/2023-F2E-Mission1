@@ -31,10 +31,10 @@ const modalRef: Ref<InstanceType<typeof Modal> | null> | undefined = inject('mod
       <div class="flex xl:p-0 md:p-4 xl:flex-row md:flex-col h-full gap-8 xl:overflow-y-visible md:overflow-y-auto scrollbar-thin">
         <!-- Left Modal Block -->
         <aside
-          class="flex-1 flex justify-between xl:flex-col md:flex-row rounded-3xl"
+          class="flex-1 flex justify-between flex-col rounded-3xl"
           :class="`${data.theme === 'default' ? 'bg-colorTheme2' : 'bg-colorTheme6'}`"
         >
-          <div class="w-2/5 xl:p-10 p-6">
+          <div class="w-full xl:p-10 p-6">
             <h1
               class="font-bold new-line"
               :class="`${data.theme === 'default' ? 'text-primaryTheme ' : 'text-primary'}`"
