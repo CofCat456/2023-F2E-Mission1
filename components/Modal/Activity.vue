@@ -54,9 +54,9 @@ const modalRef: Ref<InstanceType<typeof Modal> | null> | undefined = inject('mod
               更多活動
             </p>
             <ul class="grid md:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-4">
-              <li v-for="{ id, title, imageUrl } in getNotSelectList" :key="id">
+              <li v-for="{ id, title: itemTitle, imageUrl } in getNotSelectList" :key="id">
                 <NuxtImg class="w-full mb-3 rounded-xl aspect-[4/3]" :src="imageUrl" loading="lazy" />
-                {{ title }}
+                {{ itemTitle }}
               </li>
             </ul>
           </div>

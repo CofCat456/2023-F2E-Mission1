@@ -3,7 +3,7 @@
 
 Demo : [立委競選官網](https://2023-f2e-mission1.vercel.app/)
 
-> 此專案為 2023 The F2E 第一關 - 立委競選官網 
+> 此專案為 2023 The F2E 第一關 - 立委競選官網
 
 ## 使用技術
 - Nuxt3 v3.8.2
@@ -15,7 +15,6 @@ Demo : [立委競選官網](https://2023-f2e-mission1.vercel.app/)
 - GSAP v3.12.4
 - Lenis v1.0.29
 - Vue 3 Lottie
-
 
 ## 程式碼風格
 
