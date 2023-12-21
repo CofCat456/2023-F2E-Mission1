@@ -3,12 +3,12 @@ import { donatePlanList } from '~/data'
 
 const props = defineProps<{
   currentDonateNum: number
-  customDonateNum: number | undefined
+  customDonateNum: number | string
 }>()
 
 const emit = defineEmits<{
   setCurrentDonateNum: [num: number]
-  'update:customDonateNum': [num: number]
+  'update:customDonateNum': [num: number | string]
 }>()
 
 function selectPlan(price: number) {
@@ -16,7 +16,7 @@ function selectPlan(price: number) {
 }
 
 const modelDonateNum = computed({
-  get: () => props.currentDonateNum,
+  get: () => props.customDonateNum,
   set: val => emit('update:customDonateNum', val),
 })
 </script>
@@ -47,7 +47,7 @@ const modelDonateNum = computed({
     </li>
     <li
       class="flex flex-col py-6 px-4 rounded-2xl border-2 border-colorTheme4 hover:border-primaryTheme transition-colors group cursor-pointer"
-      :class="customDonateNum === currentDonateNum ? 'border-primaryTheme' : 'hover:border-primaryTheme'"
+      :class="Number(customDonateNum) > 0 ? 'border-primaryTheme' : 'hover:border-primaryTheme'"
     >
       <h5 class="flex-1 text-primaryTheme transition-colors">
         自訂贊助金額

@@ -14,7 +14,7 @@ const isLoading = ref(false)
 const isPass = ref(false)
 const modalFormType = ref<ContactType>('donate')
 const currentDonateNum = ref(0)
-const customDonateNum = ref<number>(0)
+const customDonateNum = ref<number | string>('')
 const formData: FormData = reactive({
   name: '',
   email: '',
@@ -56,7 +56,7 @@ function onSubmit() {
 }
 
 watch(customDonateNum, (newNum) => {
-  if (newNum === undefined)
+  if (newNum === undefined || newNum === '')
     currentDonateNum.value = 0
   else
     currentDonateNum.value = newNum
@@ -117,6 +117,7 @@ onMounted(() => {
           v-if="modalFormType === 'donate'"
           v-model:customDonateNum="customDonateNum"
           :current-donate-num="currentDonateNum"
+          @set-current-donate-num="price => currentDonateNum = price"
         />
         <ContactService
           v-else
