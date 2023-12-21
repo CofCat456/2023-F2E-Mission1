@@ -1,75 +1,27 @@
-# Nuxt 3 Minimal Starter
+# **2023 THE F2E Mission1 - 立委競選官網**
+![cover](https://github.com/CofCat456/2023-F2E-Mission1/blob/main/public/img_seo.png)
 
-Look at the [Nuxt 3 documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
+Demo : [立委競選官網](https://2023-f2e-mission1.vercel.app/)
 
-## Setup
+> 此專案為 2023 The F2E 第一關 - 立委競選官網 
 
-Make sure to install the dependencies:
+## 使用技術
+- Nuxt3 v3.8.2
+- Nuxt Image v1.1.0
+- Nuxt Fontaine v0.4.1
+- Nuxt Google Fonts v3.1.0
+- Nuxt Tailwind v6.10.1
+- VueUse v10.6.1
+- GSAP v3.12.4
+- Lenis v1.0.29
+- Vue 3 Lottie
 
-```bash
-# npm
-npm install
 
-# pnpm
-pnpm install
+## 程式碼風格
 
-# yarn
-yarn install
+[![code style](https://antfu.me/badge-code-style.svg)](https://github.com/antfu/eslint-config)
 
-# bun
-bun install
-```
+## 設計稿
 
-## Development Server
-
-Start the development server on `http://localhost:3000`:
-
-```bash
-# npm
-npm run dev
-
-# pnpm
-pnpm run dev
-
-# yarn
-yarn dev
-
-# bun
-bun run dev
-```
-
-## Production
-
-Build the application for production:
-
-```bash
-# npm
-npm run build
-
-# pnpm
-pnpm run build
-
-# yarn
-yarn build
-
-# bun
-bun run build
-```
-
-Locally preview production build:
-
-```bash
-# npm
-npm run preview
-
-# pnpm
-pnpm run preview
-
-# yarn
-yarn preview
-
-# bun
-bun run preview
-```
-
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
+- 設計師：[jhen](https://2023.thef2e.com/users/12061579704041679194)
+- 設計稿：[立委競選官網](https://www.figma.com/file/DCnuTZQ00D5VHiDkBLhxQ3/2023-The-F2E-%E7%AB%8B%E5%A7%94%E7%AB%B6%E9%81%B8%E5%AE%98%E7%B6%B2?type=design&node-id=3888-1152&mode=design&t=WXEEVvD964OZU2Zy-0)

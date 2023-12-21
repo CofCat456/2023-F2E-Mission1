@@ -19,7 +19,7 @@ useSeoMeta({
   title: '喵立翰 Miao Li-Han',
   ogTitle: '喵立翰 Miao Li-Han - 台灣的明天 喵先鋪路',
   description: 'The-F2E-立委競選官網',
-  ogImage: '/seo.png',
+  ogImage: '/img_seo.png',
 })
 
 onMounted(() => {
