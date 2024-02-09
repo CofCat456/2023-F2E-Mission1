@@ -17,7 +17,7 @@ const modelFormData = computed({
 </script>
 
 <template>
-  <ul class="grid gap-y-6 mb-6">
+  <ul class="grid gap-y-6 mb-6 pl-1">
     <!-- inputs -->
     <li v-for="item in formList" :key="item.label" class="grid gap-y-2">
       <label :for="item.id" class="sm:text-[20px] text-[20px] font-bold leading-normal">{{ item.label }}</label>

@@ -3,11 +3,11 @@ import { donatePlanList } from '~/data'
 
 const props = defineProps<{
   currentDonateNum: number
-  customDonateNum: number | string
+  customDonateNum: string
 }>()
 
 const emit = defineEmits<{
-  setCurrentDonateNum: [num: number]
+  'setCurrentDonateNum': [num: number]
   'update:customDonateNum': [num: number | string]
 }>()
 

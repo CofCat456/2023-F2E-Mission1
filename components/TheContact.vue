@@ -1,20 +1,27 @@
 <script lang="ts" setup>
+import { z } from 'zod'
 import type { Modal } from '#components'
 import { Section } from '~/types'
 import type { ContactData, ContactType, FormData } from '~/types'
 import { contactList } from '~/data'
 
 const { gsap } = useGsap()
-
 const contactRef = ref<HTMLElement | null>()
 const contactBoxsRef = ref<HTMLElement[] | null>(null)
 const modalRef = ref<InstanceType<typeof Modal> | null>(null)
+
+const formSchema = z.object({
+  name: z.string(),
+  email: z.string().email(),
+  phone: z.string().regex(/^[0-9]{10}$/),
+  suggest: z.string(),
+})
 
 const isLoading = ref(false)
 const isPass = ref(false)
 const modalFormType = ref<ContactType>('donate')
 const currentDonateNum = ref(0)
-const customDonateNum = ref<number | string>('')
+const customDonateNum = ref<string>('')
 const formData: FormData = reactive({
   name: '',
   email: '',
@@ -46,20 +53,57 @@ function openFormModal(contact: ContactData) {
   modalRef.value?.open()
 }
 
-function onSubmit() {
+async function sendEmail() {
+  try {
+    await $fetch('/api/send-email', {
+      method: 'POST',
+      body: JSON.stringify({ ...formData, type: modalFormType.value }),
+
+    })
+    isPass.value = true
+    Object.assign(formData, {
+      name: '',
+      email: '',
+      phone: '',
+      suggest: '',
+    })
+  }
+  finally {
+    isLoading.value = false
+  }
+}
+
+async function onSubmit() {
   isLoading.value = true
 
-  setTimeout(() => {
+  const validationResult = formSchema.safeParse({
+    name: formData.name,
+    email: formData.email,
+    phone: formData.phone,
+    suggest: formData.suggest,
+  })
+
+  if (validationResult.success) {
+    if (modalFormType.value === 'donate') {
+      setTimeout(() => {
+        isLoading.value = false
+        isPass.value = true
+      }, 1000)
+    }
+    else {
+      await sendEmail()
+    }
+  }
+  else {
     isLoading.value = false
-    isPass.value = true
-  }, 1000)
+  }
 }
 
 watch(customDonateNum, (newNum) => {
   if (newNum === undefined || newNum === '')
     currentDonateNum.value = 0
   else
-    currentDonateNum.value = newNum
+    currentDonateNum.value = Number.parseInt(newNum)
 })
 
 onMounted(() => {
@@ -90,11 +134,7 @@ onMounted(() => {
             <BasicButton class="bg-white" :theme="contact.theme" @click="openFormModal(contact)">
               {{ contact.btnText }}
             </BasicButton>
-            <NuxtImg
-              class="xl:w-1/2 w-[100px] h-auto object-cover"
-              :src="contact.imageUrl"
-              loading="lazy"
-            />
+            <NuxtImg class="xl:w-1/2 w-[100px] h-auto object-cover" :src="contact.imageUrl" loading="lazy" />
           </div>
         </li>
       </template>
@@ -106,8 +146,7 @@ onMounted(() => {
       :data="selectContact"
       :data-list="contactList"
       :btn-status="isSelected || isValidation"
-      :is-loading="isLoading"
-      :is-pass="isPass"
+      :is-loading="isLoading" :is-pass="isPass"
       @on-submit="onSubmit"
       @on-close="isPass = false"
     >
@@ -119,10 +158,7 @@ onMounted(() => {
           :current-donate-num="currentDonateNum"
           @set-current-donate-num="price => currentDonateNum = price"
         />
-        <ContactService
-          v-else
-          v-model:formData="formData"
-        />
+        <ContactService v-else v-model:formData="formData" />
       </template>
       <template #formBtnText>
         {{ modalFormType === 'donate' ? '前往捐款' : '送出意見' }}

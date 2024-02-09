@@ -18,8 +18,13 @@ export default defineNuxtConfig({
       },
     }],
     '@nuxtjs/fontaine',
+    '@vue-email/nuxt',
   ],
   css: [
     '~/assets/css/global.css',
   ],
+  runtimeConfig: {
+    gmailAppUserMail: '',
+    gmailAppPassword: '',
+  },
 })
