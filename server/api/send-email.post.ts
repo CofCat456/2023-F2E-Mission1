@@ -25,7 +25,7 @@ export default defineEventHandler(async (event) => {
   await transporter.sendMail({
     from: `喵立翰 <${gmailAppUserMail}>`,
     to: [email],
-    subject: `感謝${name} 您寶貴的意見`,
+    subject: `感謝 ${name} 您寶貴的意見`,
     html: template.html,
     text: template.text,
   })

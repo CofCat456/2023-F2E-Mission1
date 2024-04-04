@@ -20,6 +20,9 @@ export default defineNuxtConfig({
     '@nuxtjs/fontaine',
     '@vue-email/nuxt',
   ],
+  vueEmail: {
+    baseUrl: 'https://2023-f2e-mission1.vercel.app/',
+  },
   css: [
     '~/assets/css/global.css',
   ],

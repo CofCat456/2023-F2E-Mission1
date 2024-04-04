@@ -30,7 +30,7 @@ const paragraph = {
     <EPreview> 感謝您寶貴的意見！我們已收到並將盡快回覆您。 </EPreview>
     <EBody :style="main">
       <EContainer :style="container">
-        <EImg src="../public/logo.svg" width="55" height="50" alt="Miao Li-Han" :style="logo" />
+        <EImg src="logo.png" width="55" height="50" alt="Miao Li-Han" :style="logo" />
         <EText :style="paragraph">
           親愛的 {{ name }}，
         </EText>
