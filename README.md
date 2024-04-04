@@ -11,6 +11,7 @@ Demo : [立委競選官網](https://2023-f2e-mission1.vercel.app/)
 - Nuxt Fontaine v0.4.1
 - Nuxt Google Fonts v3.1.0
 - Nuxt Tailwind v6.10.1
+- Nuxt Vue Email
 - VueUse v10.6.1
 - GSAP v3.12.4
 - Lenis v1.0.29
